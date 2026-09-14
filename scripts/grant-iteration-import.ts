@@ -1,0 +1,13 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+const root=resolve(process.argv[2]),handoff=JSON.parse(await readFile(join(root,'handoff.json'),'utf8')),ownerPath=join(root,'data/config.json'),run=promisify(execFile);
+const call=async(args:string[])=>{const r=JSON.parse((await run(process.execPath,[handoff.cli,'--config',ownerPath,'--json',...args],{maxBuffer:8*1024*1024})).stdout);if(r.status==='failed')throw Error(JSON.stringify(r.error));return r.data;};
+const actors=await call(['actors','list']),previous=actors.items.find((a:any)=>a.id===handoff.actorId);if(!previous||previous.revoked)throw Error('Source grant unavailable');
+const scopes=[...new Set([...previous.scopes,'import'])];
+const created=await call(['actors','create','--name','TLC import and iteration acceptance','--projects',previous.projectIds.join(','),'--scopes',scopes.join(','),'--idempotency-key','tlc-028-additive-import-acceptance']);
+const config=JSON.parse(await readFile(ownerPath,'utf8')),configPath=join(root,'tlc-import-agent.config.json');
+await writeFile(configPath,JSON.stringify({...config,ownerToken:created.token},null,2),{mode:0o600});
+const record={actorId:created.id,configPath,instanceId:handoff.instanceId,workspaceId:handoff.workspaceId,scopes,projectIds:previous.projectIds,previousActorId:previous.id,previousCredentialPreserved:true};
+await writeFile(join(root,'import-grant.json'),JSON.stringify(record,null,2));console.log(JSON.stringify(record));

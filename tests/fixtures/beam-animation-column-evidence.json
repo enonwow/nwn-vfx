@@ -1,0 +1,10 @@
+{
+  "source": "retail nwmain-linux; Linux x86-64",
+  "sourceSha256": "6d19c39bc646af5ddbc333ff31797a4acd9019506bcb45ef1b93b1bd5925e700",
+  "function": "CNWCVisualEffectOnObject::ApplyBeam",
+  "address": "0x815bf4",
+  "bytesHex": "ba6d360000488d4db0c640060066895004488d55c0c700706172610fb7f34c89ef488945c0c745c806000000e8dbded2ff",
+  "bytesSha256": "dbb34bf962037405d31990b7b26321f4b7dd613f245033bb61825adb8ed4ffcb",
+  "evidence": "docs/agents/beam-audit-2026-09-10.md",
+  "note": "Offline evidence, not native execution. Instructions construct the C2DA column before GetCExoStringEntry."
+}

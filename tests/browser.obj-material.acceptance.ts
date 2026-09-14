@@ -1,0 +1,151 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { mkdtemp, mkdir, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { basename, dirname, join, resolve } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import { chromium } from 'playwright';
+import { createApp } from '../apps/service/src/app.js';
+import { makeMeshLayer, type MeshLayer } from '../packages/core/src/model.js';
+import { orientationTexture } from './fixtures/rgba-texture.js';
+
+test('OBJ and material UI preserve staged source, pending human JSON, layer timing and atomic reset', { timeout: 90000 }, async () => {
+  const port = 14348, origin = `http://127.0.0.1:${port}`, dataDir = await mkdtemp(join(tmpdir(), 'nwn-vfx-obj-material-ui-'));
+  const app = await createApp({ dataDir, port, webDir: resolve('dist/web') });
+  await app.listen({ host: '127.0.0.1', port });
+  const browser = await chromium.launch({ headless: true, channel: 'chromium', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader'] });
+  const call = async (operation: string, input: Record<string, unknown>) => {
+    const response = await fetch(origin + '/api/commands', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + app.studio.config.ownerToken },
+      body: JSON.stringify({ operation, input, idempotencyKey: randomUUID() }) });
+    const result: any = await response.json(); assert.notEqual(result.status, 'failed', JSON.stringify(result.error)); return result.data;
+  };
+  try {
+    const project = await call('projects.create', { preset: 'coil', name: 'OBJ material UI acceptance' });
+    const mesh = { ...makeMeshLayer('stone', 'Asymetryczny kamień'), color: '#889099', start: .2, duration: 2,
+      animation: { orientation: [{ time: 0, value: [0, 0, 1, 0] }, { time: 2, value: [0, 0, 1, Math.PI] }] } };
+    await call('changes.apply', { projectId: project.id, expectedRevision: 1, changes: [{ type: 'layer.add', layer: mesh }] });
+    const asset = await call('assets.import', { projectId: project.id, expectedRevision: 2, fileName: 'asymmetric.png', pngBase64: Buffer.from(orientationTexture(8)).toString('base64') });
+    const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, locale: 'pl-PL' });
+    // Registration mock, real shipped callbacks and server. This is not native host discovery evidence.
+    await context.addInitScript(() => {
+      const registry = new Map<string, any>(); (window as any).__objTestRegistry = registry;
+      Object.defineProperty(document, 'modelContext', { configurable: true, value: {
+        registerTool(tool: any, options?: { signal?: AbortSignal }) { registry.set(tool.name, tool); options?.signal?.addEventListener('abort', () => registry.delete(tool.name), { once: true }); },
+      } });
+    });
+    const page = await context.newPage(), errors: string[] = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto(origin, { waitUntil: 'domcontentloaded' }); await page.getByText('rewizja 3', { exact: true }).waitFor();
+    await page.getByRole('button', { name: 'Zatrzymaj', exact: true }).click();
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Asymetryczny kamień', exact: true }).click();
+    await page.getByRole('button', { name: 'Połącz agenta', exact: true }).click();
+    await page.getByRole('button', { name: 'Udostępnij projekt AI', exact: true }).click();
+    await page.getByRole('button', { name: 'Odłącz WebMCP', exact: true }).waitFor();
+    await page.getByRole('dialog').getByRole('button', { name: 'Zamknij', exact: true }).click();
+    const invoke = (name: string, input: unknown = {}): Promise<any> => page.evaluate(async ({ name, input }) => (window as any).__objTestRegistry.get(name).execute(input), { name, input });
+    const viewSessionId = (await invoke('studio.connection.inspect')).data.viewSessionId;
+    const inspect = async () => (await invoke('studio.view.inspect', { viewSessionId })).data;
+    const before = await inspect();
+    await page.getByText('Geometria JSON', { exact: true }).click();
+    await page.getByRole('textbox', { name: 'Geometria JSON', exact: true }).fill('{ unfinished geometry');
+    assert.equal(await page.getByRole('button', { name: 'Wybierz OBJ', exact: true }).isDisabled(), true);
+    await page.getByRole('button', { name: 'Odrzuć edycję geometrii', exact: true }).click();
+    const source = '# asymmetric UV and dimensions\nv 0 0 0\nv 2 0 0\nv 0 1 1\nvt 0 0\nvt 1 0\nvt 0 1\nvn 0 -1 1\ns 1\nf 1/1/1 2/2/1 3/3/1\n';
+    await page.evaluate(() => {
+      const original = File.prototype.arrayBuffer;
+      File.prototype.arrayBuffer = function () {
+        if (this.name !== 'delayed.obj') return original.call(this);
+        const file = this;
+        return new Promise<ArrayBuffer>(resolve => { (window as any).__releaseObjRead = async () => resolve(await original.call(file)); });
+      };
+    });
+    await page.getByLabel('Plik geometrii OBJ', { exact: true }).setInputFiles({ name: 'delayed.obj', mimeType: 'text/plain', buffer: Buffer.from(source) });
+    const reserved = await inspect(); assert.equal(reserved.draftDirty, true); assert.equal(reserved.meshEditorDrafts.stone.obj.reading, true);
+    assert.equal(await page.getByRole('button', { name: 'Zapisz', exact: true }).isDisabled(), true);
+    assert.equal(await page.getByRole('combobox', { name: 'Projekt', exact: true }).isDisabled(), true, 'Navigation is blocked before file bytes resolve');
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Iskry', exact: true }).click();
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Asymetryczny kamień', exact: true }).click();
+    assert.equal((await inspect()).meshEditorDrafts.stone.obj.reading, true, 'Reserved read survives layer remount');
+    await page.evaluate(() => (window as any).__releaseObjRead());
+    await page.getByRole('button', { name: 'Wybierz OBJ', exact: true }).waitFor();
+    assert.equal(await page.getByRole('textbox', { name: 'Źródło OBJ', exact: true }).inputValue(), source);
+    await page.getByRole('combobox', { name: 'Oś źródła OBJ', exact: true }).selectOption('y');
+    await page.getByRole('spinbutton', { name: 'Metry na jednostkę OBJ', exact: true }).fill('0.5');
+    await page.getByRole('combobox', { name: 'Normalne OBJ', exact: true }).selectOption('flat');
+    await page.getByRole('combobox', { name: 'Tekstura importu OBJ', exact: true }).selectOption(asset.assetId);
+    let view = await inspect(); assert.equal(view.draftDirty, true); assert(view.viewRevision > before.viewRevision);
+    assert.equal(view.meshEditorDrafts.stone.obj.text, source); assert.equal(view.meshEditorDrafts.stone.obj.sourceUpAxis, 'y');
+    assert.equal(view.meshEditorDrafts.stone.obj.metersPerUnit, '0.5');
+    assert.deepEqual(view.draft.layers.find((layer: any) => layer.id === 'stone').geometry, mesh.geometry, 'Staging never mutates geometry');
+    assert.equal(await page.getByRole('button', { name: 'Zapisz', exact: true }).isDisabled(), true);
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Iskry', exact: true }).click();
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Asymetryczny kamień', exact: true }).click();
+    assert.equal(await page.getByRole('textbox', { name: 'Źródło OBJ', exact: true }).inputValue(), source);
+    assert.equal(mesh.geometry.kind, 'box');
+    await page.getByRole('spinbutton', { name: 'Wymiar X (m)', exact: true }).fill('0.33');
+    await page.getByRole('button', { name: 'Zastosuj OBJ do szkicu', exact: true }).click();
+    await page.getByRole('alert').filter({ hasText: 'Geometria lub tekstura zmieniła się' }).waitFor();
+    assert.equal((await inspect()).meshEditorDrafts.stone.obj.text, source, 'Conflict preserves the staged OBJ source');
+    await page.getByRole('spinbutton', { name: 'Wymiar X (m)', exact: true }).fill(String(mesh.geometry.kind === 'box' ? mesh.geometry.dimensions[0] : 0));
+    await page.getByText('Klucze animacji JSON', { exact: true }).click();
+    await page.getByRole('textbox', { name: 'Klucze animacji JSON', exact: true }).fill('{ unfinished animation');
+    await page.getByRole('button', { name: 'Zastosuj OBJ do szkicu', exact: true }).click();
+    await page.getByRole('status').filter({ hasText: 'Import w szkicu:' }).waitFor();
+    view = await inspect(); assert.equal(view.meshEditorDrafts.stone.obj, undefined);
+    assert.equal(view.meshEditorDrafts.stone.animation.text, '{ unfinished animation');
+    assert.equal(await page.getByRole('button', { name: 'Zapisz', exact: true }).isDisabled(), true);
+    const staged = view.draft.layers.find((layer: any) => layer.id === 'stone');
+    assert.deepEqual(staged.geometry.vertices, [[0, 0, 0], [1, 0, 0], [0, -.5, .5]]);
+    assert.deepEqual(staged.geometry.uv, [[0, 0], [1, 0], [0, 1]]); assert.deepEqual(staged.geometry.uvFaces, [[0, 1, 2]]);
+    assert.equal(staged.texture, `asset:${asset.assetId}`); assert.deepEqual(staged.animation, mesh.animation);
+    assert.equal(staged.start, .2); assert.equal(staged.duration, 2);
+    await page.getByRole('button', { name: 'Odrzuć edycję kluczy', exact: true }).click();
+    await page.getByRole('combobox', { name: 'Tryb materiału geometrii', exact: true }).selectOption('lit');
+    assert.equal(await page.getByLabel('Diffuse geometrii', { exact: true }).inputValue(), '#889099');
+    assert.equal(await page.getByLabel('Samoświecenie geometrii', { exact: true }).inputValue(), '#000000');
+    await page.getByRole('button', { name: 'Zapisz', exact: true }).click(); await page.getByText('rewizja 4', { exact: true }).waitFor();
+    let saved = await call('projects.inspect', { projectId: project.id }), savedMesh: MeshLayer = saved.document.layers.find((layer: any) => layer.id === 'stone');
+    assert.equal(saved.document.schemaVersion, 5); assert.deepEqual(savedMesh.material, { diffuse: '#889099', selfIllumination: '#000000' });
+    assert.deepEqual(savedMesh.geometry, staged.geometry); assert.deepEqual(savedMesh.animation, mesh.animation);
+    await page.getByRole('slider', { name: 'Czas podglądu', exact: true }).fill('1');
+    await mkdir(resolve('output/playwright'), { recursive: true });
+    await page.getByRole('combobox', { name: 'Tryb materiału geometrii', exact: true }).scrollIntoViewIfNeeded();
+    await page.screenshot({ path: resolve('output/playwright/obj-material-editor-desktop.png'), fullPage: true });
+    await page.locator('.obj-import-inspector').screenshot({ path: resolve('output/playwright/obj-import-controls-desktop.png') });
+    await page.setViewportSize({ width: 390, height: 844 });
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+    await page.screenshot({ path: resolve('output/playwright/obj-material-editor-mobile.png'), fullPage: true });
+    await page.locator('.obj-import-inspector').screenshot({ path: resolve('output/playwright/obj-import-controls-mobile.png') });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+    await page.getByRole('combobox', { name: 'Tryb materiału geometrii', exact: true }).selectOption('legacy');
+    await page.getByRole('button', { name: 'Zapisz', exact: true }).click(); await page.getByText('rewizja 5', { exact: true }).waitFor();
+    saved = await call('projects.inspect', { projectId: project.id }); savedMesh = saved.document.layers.find((layer: any) => layer.id === 'stone');
+    assert.equal(Object.hasOwn(savedMesh, 'material'), false); assert.equal(saved.document.schemaVersion, 5);
+    await call('changes.apply', { projectId: project.id, expectedRevision: 5, changes: [{ type: 'locks.set', locks: [{ layerId: 'stone', field: 'material' }, { layerId: 'stone', field: 'geometry' }] }] });
+    await page.getByText('rewizja 6', { exact: true }).waitFor();
+    assert.equal(await page.getByRole('button', { name: 'Wybierz OBJ', exact: true }).isDisabled(), true);
+    assert.equal(await page.getByRole('combobox', { name: 'Tryb materiału geometrii', exact: true }).isDisabled(), true);
+    await call('changes.apply', { projectId: project.id, expectedRevision: 6, changes: [{ type: 'locks.set', locks: [] }] });
+    await page.getByText('rewizja 7', { exact: true }).waitFor();
+    const fork = await invoke('studio.projects.fork', { viewSessionId, input: { projectId: project.id, revision: 7, name: 'Same mesh ID in another project' }, idempotencyKey: 'obj-file-race-fork' });
+    assert.equal(fork.status, 'ok');
+    await page.getByLabel('Plik geometrii OBJ', { exact: true }).setInputFiles({ name: 'delayed.obj', mimeType: 'text/plain', buffer: Buffer.from(source + '# obsolete read') });
+    const waitingView = await inspect();
+    assert.equal((await invoke('studio.view.open', { viewSessionId, projectId: fork.data.id, expectedViewRevision: waitingView.viewRevision })).error.code, 'DRAFT_CONFLICT');
+    await page.getByRole('button', { name: 'Odrzuć import OBJ', exact: true }).click();
+    const discardedView = await inspect(); assert.equal(discardedView.draftDirty, false);
+    assert.equal((await invoke('studio.view.open', { viewSessionId, projectId: fork.data.id, expectedViewRevision: discardedView.viewRevision })).status, 'ok');
+    await page.getByRole('button', { name: 'Zaznacz na osi czasu: Asymetryczny kamień', exact: true }).click();
+    const foreignBefore = await inspect();
+    await page.evaluate(() => (window as any).__releaseObjRead());
+    await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+    const foreignAfter = await inspect();
+    assert.equal(foreignAfter.projectId, fork.data.id); assert.equal(foreignAfter.draftDirty, false);
+    assert.deepEqual(foreignAfter.meshEditorDrafts, {}); assert.deepEqual(foreignAfter.draft, foreignBefore.draft, 'Old file completion cannot touch another project with the same mesh ID');
+    assert.deepEqual(errors, []);
+  } finally {
+    await browser.close(); await app.close();
+    assert.equal(resolve(dirname(dataDir)), resolve(tmpdir())); assert(basename(dataDir).startsWith('nwn-vfx-obj-material-ui-'));
+    await rm(dataDir, { recursive: true, force: true });
+  }
+});

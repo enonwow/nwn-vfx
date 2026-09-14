@@ -1,0 +1,72 @@
+#MAXMODEL ASCII
+# Hand-authored format fixture, independent of the Studio writer.
+newmodel fixture_mesh
+setsupermodel fixture_mesh NULL
+classification EFFECT
+setanimationscale 1
+beginmodelgeom fixture_mesh
+node dummy fixture_mesh
+  parent NULL
+endnode
+node dummy mesh_parent
+  parent fixture_mesh
+  position 0 0 0
+  scale 1
+endnode
+node trimesh panel
+  parent mesh_parent
+  position 2 -1 0.5
+  orientation 0 1 0 1.5707963267948966
+  scale 0.75
+  bitmap NULL
+  diffuse 0.75 0.5 0.25
+  selfillumcolor 0.75 0.5 0.25
+  alpha 0
+  verts 3
+    -1 0 0
+    1 0 0
+    0 0 2
+  tverts 3
+    0 0 0
+    1 0 0
+    0.5 1 0
+  endlist
+  faces 1
+    0 1 2 1 2 0 1 0
+endnode
+endmodelgeom fixture_mesh
+newanim impact fixture_mesh
+  length 2.5
+  transtime 0
+  animroot fixture_mesh
+node dummy fixture_mesh
+  parent NULL
+endnode
+node dummy mesh_parent
+  parent fixture_mesh
+endnode
+node trimesh panel
+  parent mesh_parent
+  positionkey 3
+    0 2 -1 0.5
+    0.5 2 -1 3
+    2.5 2 -1 0
+  endlist
+  orientationkey 3
+    0 0 0 1 0
+    0.5 0 1 0 1.5707963267948966
+    2.5 0 0 1 3.141592653589793
+  scalekey
+    0 0.75
+    0.5 1.5
+    2.5 1
+  endlist
+  alphakey 4
+    0 0
+    0.5 1
+    2 1
+    2.5 0
+  endlist
+endnode
+doneanim impact fixture_mesh
+donemodel fixture_mesh

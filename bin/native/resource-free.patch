@@ -1,0 +1,11 @@
+--- a/nwnmdlcomp/nwnmdlcomp.cpp
++++ b/nwnmdlcomp/nwnmdlcomp.cpp
+@@ -1077,7 +1077,7 @@
+     // We must be able to open the file
+     //
+ 
+-    if (!g_sLoader .Initialize (pszNWNDir) && (g_fCompile || g_fExtract))
++    /* Isolated resource-free format probe: no game discovery; extraction disabled. */ if (g_fExtract)
+     {
+         printf ("Unable to locate or open Neverwinter Night\n");
+         exit (0);
