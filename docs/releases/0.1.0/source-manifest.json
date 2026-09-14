@@ -1,0 +1,149 @@
+{
+  "version": "0.1.0",
+  "recordedAtUtc": "2026-09-05T15:22:35.8494866Z",
+  "unitAndIntegrationTests": 36,
+  "browserAcceptanceTests": 1,
+  "nativeVerified": false,
+  "sources": [
+    {
+      "path": "apps/cli/src/client.ts",
+      "sha256": "0702b4c6f39de560c9b55dffad66bfc33426e311b75345a26c468433b7dfa029"
+    },
+    {
+      "path": "apps/cli/src/main.ts",
+      "sha256": "d7476466f22a86f22dd03a898d33229cbcbd1e3d27db4fbbb44938597db36a62"
+    },
+    {
+      "path": "apps/service/src/app.ts",
+      "sha256": "d718df9b29bf9ec579f4bc06c40f56c1dbe23f8fe43b1fdd86550b8449125c2b"
+    },
+    {
+      "path": "apps/service/src/commands.ts",
+      "sha256": "aa0d7d18f6987fb102e2cf98ea114b2255861eea301bdd255bc3a53f1fe52494"
+    },
+    {
+      "path": "apps/service/src/jobs.ts",
+      "sha256": "f42b00aded016d417451e143682eff818bc18dfb10a76d38fa678476822b0985"
+    },
+    {
+      "path": "apps/service/src/main.ts",
+      "sha256": "652d8339b483803afcf4c598d63e255fadbcc128202b004da1a7bf6936872093"
+    },
+    {
+      "path": "apps/service/src/render.ts",
+      "sha256": "0ac9708272db80f8388418d8921d32c4cf5ee146dc515a90ca43c960250fd9ac"
+    },
+    {
+      "path": "apps/service/src/store.ts",
+      "sha256": "7b858738c82d468cd320414cff53aa32bbd20698d4a148106c0c7ae6972a48de"
+    },
+    {
+      "path": "apps/web/index.html",
+      "sha256": "c450d30c01256aef6c7b78be2d584ba3b482376389e501d760b65f27525cdff2"
+    },
+    {
+      "path": "apps/web/src/api.ts",
+      "sha256": "3719c8707f0fca1820768974473d8c88ef8421e809388bbf0bf63aa06ea3faeb"
+    },
+    {
+      "path": "apps/web/src/env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "sha256": "91171596062aead6ee21d2bb3b35724ec57c6a057788f68687f18a5ce30eb6af"
+    },
+    {
+      "path": "apps/web/src/style.css",
+      "sha256": "89371b12faf5d3624a8a9592e2864219049104c8f86316692f73e153747b664f"
+    },
+    {
+      "path": "bin/nwn-vfx.mjs",
+      "sha256": "41b69ac46422ebdfc0bc99ec8f899e80f1067b3663e8651d4b41b40b01d3e225"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "10600be98bfec10e4b09460b834c105e953ebd170012639d91408560ea9c750c"
+    },
+    {
+      "path": "package.json",
+      "sha256": "174681d0e0c6fad6a685048cd9febe5c666e7517ba9e71062250156b34a92653"
+    },
+    {
+      "path": "packages/contracts/src/schema.ts",
+      "sha256": "0381e9448f2cb62baa03752fff4c498c993299261d02a45f8010e26793823e44"
+    },
+    {
+      "path": "packages/core/src/model.ts",
+      "sha256": "73b63d6272093639c2eab9cf9cd0b4aa3287a2e592e7df26c544b247b229ea41"
+    },
+    {
+      "path": "packages/nwn-format/src/binary.ts",
+      "sha256": "6528caba88ec30681462a8085252251cea59aba561730735efef78de7ff24e4a"
+    },
+    {
+      "path": "packages/nwn-format/src/index.ts",
+      "sha256": "2e83b2181f865a129ffc7122e3881e5badf40b4a1777937fb85153abdcf54a63"
+    },
+    {
+      "path": "packages/nwn-format/src/mdl-reader.ts",
+      "sha256": "530befb73293303a2a69f5e84e3d2000e276591a1db28ca7c1c4055acbb3c048"
+    },
+    {
+      "path": "packages/nwn-format/src/mdl-writer.ts",
+      "sha256": "66c442564c423d02066362a33eca017a2d87912f95d70cfa6be849bcd3a75729"
+    },
+    {
+      "path": "packages/nwn-format/src/README.md",
+      "sha256": "293b0cb239332296bcc2ad9365e81d34957fa91f7e54e1dc5605af46d555fa55"
+    },
+    {
+      "path": "packages/nwn-format/src/textures.ts",
+      "sha256": "3300796fc00378c6a232c9f541f8f224e578299414ec5899252954291c28aba2"
+    },
+    {
+      "path": "packages/renderer/src/index.ts",
+      "sha256": "dfec3db6ded9c784cbe32cbaa93e82a0312a3f3669344da7ad7d82e80c77f030"
+    },
+    {
+      "path": "skills/nwn-vfx/SKILL.md",
+      "sha256": "a59831d435f4e06f80a9516fd40fcebb445d1094dd46c551bde4f6c9017d006d"
+    },
+    {
+      "path": "tests/browser.acceptance.ts",
+      "sha256": "8aa00559b6340d1272ccc308146e513ac40eff4c3b757f177d04c5d943bc28b7"
+    },
+    {
+      "path": "tests/cli.test.ts",
+      "sha256": "098187a2cfa01054e9d34aaf531f39083c0f214b2c27734b5f52530fd6f30511"
+    },
+    {
+      "path": "tests/contracts.test.ts",
+      "sha256": "33256c7f5056f930b45fd70cdf3ef6b7def0534a6b3ea6bba38a37de9d5d791a"
+    },
+    {
+      "path": "tests/fixtures/independent-emitter.mdl",
+      "sha256": "8bdd36f190467b2b1603339f17e850fb26219b7034dedfe451286fd18d6262f6"
+    },
+    {
+      "path": "tests/format.test.ts",
+      "sha256": "77eb87f36423dbda19aca7089895c5a4fafbc5b76e5df455379ffcf97f7a9f49"
+    },
+    {
+      "path": "tests/service.test.ts",
+      "sha256": "4a8428bff69e18cb84fd9e3585503bd6fd6cbf49554a81abeca7bb0ab8fa2c65"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "fd9f1659fad3b48fcba7ba8971b4b82c9b60be67a9037b93078e5eeed12bff20"
+    },
+    {
+      "path": "tsup.config.ts",
+      "sha256": "30dbb62be509564a28bf502c86df7f447a13a1e92403434989164257035ace2a"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "2cca22d0f660013d049f62ff2edfc89720cf7c4ab8e9262e2aa90af123e349b7"
+    }
+  ]
+}

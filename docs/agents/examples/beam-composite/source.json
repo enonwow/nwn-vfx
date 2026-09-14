@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 19,
+  "name": "Static strand + finite flow — technical example",
+  "duration": 4,
+  "seed": 1827,
+  "lifecycle": "beam",
+  "profileId": "nwn-ee-beam-ascii-experimental-v1",
+  "locks": [],
+  "layers": [
+    {
+      "id": "flow",
+      "name": "Iskry",
+      "type": "emitter",
+      "enabled": true,
+      "color": "#ffbd59",
+      "endColor": "#ff572e",
+      "alpha": 0,
+      "endAlpha": 0,
+      "size": 0.08,
+      "endSize": 0.05,
+      "count": 120,
+      "life": 0.6,
+      "speed": 0,
+      "spread": 0,
+      "gravity": 0,
+      "start": 0,
+      "duration": 3,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1,
+      "seed": 42,
+      "texture": "glow",
+      "update": "Fountain",
+      "midAlpha": 0.4,
+      "midSize": 0.12,
+      "beamBinding": {
+        "role": "flow",
+        "source": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          3,
+          1.2
+        ],
+        "direction": "source-to-target",
+        "pulse": {
+          "period": 0.5,
+          "duty": 0.6
+        }
+      }
+    }
+  ]
+}

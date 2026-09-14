@@ -1,0 +1,19 @@
+[
+  {
+    "type": "layer.set",
+    "layerId": "beam",
+    "values": {
+      "width": 0.035,
+      "target": [
+        0,
+        5,
+        1.2
+      ],
+      "color": "#e53045",
+      "flow": {
+        "direction": "target-to-source",
+        "speed": 2
+      }
+    }
+  }
+]

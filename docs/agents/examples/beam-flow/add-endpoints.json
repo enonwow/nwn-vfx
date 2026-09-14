@@ -1,0 +1,98 @@
+[
+  {
+    "type": "layer.add",
+    "layer": {
+      "id": "endpoint_source",
+      "name": "Endpoint source",
+      "type": "emitter",
+      "enabled": true,
+      "color": "#ffbd59",
+      "endColor": "#ff572e",
+      "alpha": 0,
+      "endAlpha": 0,
+      "size": 0.16,
+      "endSize": 0.24,
+      "count": 24,
+      "life": 0.3,
+      "speed": 0,
+      "spread": 0,
+      "gravity": 0,
+      "start": 0,
+      "duration": 3,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1,
+      "seed": 42,
+      "texture": "glow",
+      "update": "Fountain",
+      "midAlpha": 0.4,
+      "midSize": 0.2,
+      "beamBinding": {
+        "role": "source",
+        "source": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          3,
+          1.2
+        ],
+        "direction": "source-to-target",
+        "node": "impact"
+      }
+    }
+  },
+  {
+    "type": "layer.add",
+    "layer": {
+      "id": "endpoint_target",
+      "name": "Endpoint target",
+      "type": "emitter",
+      "enabled": true,
+      "color": "#ffbd59",
+      "endColor": "#ff572e",
+      "alpha": 0,
+      "endAlpha": 0,
+      "size": 0.16,
+      "endSize": 0.24,
+      "count": 24,
+      "life": 0.3,
+      "speed": 0,
+      "spread": 0,
+      "gravity": 0,
+      "start": 0.3,
+      "duration": 3,
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "scale": 1,
+      "seed": 42,
+      "texture": "glow",
+      "update": "Fountain",
+      "midAlpha": 0.4,
+      "midSize": 0.2,
+      "beamBinding": {
+        "role": "target",
+        "source": [
+          0,
+          0,
+          1.2
+        ],
+        "target": [
+          0,
+          3,
+          1.2
+        ],
+        "direction": "source-to-target",
+        "node": "handconjure"
+      }
+    }
+  }
+]

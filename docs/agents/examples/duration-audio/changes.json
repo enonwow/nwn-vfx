@@ -1,0 +1,42 @@
+[
+  {
+    "type": "audio.add",
+    "clip": {
+      "id": "up",
+      "type": "audio",
+      "name": "Technical up",
+      "assetId": "d6b28645e5345d53443226ea3107511b346f69b4f17f21e1479b0cea2db90671",
+      "enabled": true,
+      "start": 0.2,
+      "duration": 0.25,
+      "offset": 0.1,
+      "gain": 0.25,
+      "fadeIn": 0.05,
+      "fadeOut": 0.07
+    }
+  },
+  {
+    "type": "audio.add",
+    "clip": {
+      "id": "down",
+      "type": "audio",
+      "name": "Technical down",
+      "assetId": "d6b28645e5345d53443226ea3107511b346f69b4f17f21e1479b0cea2db90671",
+      "enabled": true,
+      "start": 1,
+      "duration": 0.3,
+      "offset": 0.25,
+      "gain": 0.125,
+      "fadeIn": 0.05,
+      "fadeOut": 0.05
+    }
+  },
+  {
+    "type": "audio.set",
+    "clipId": "up",
+    "values": {
+      "gainDb": -18,
+      "offset": 0.1
+    }
+  }
+]

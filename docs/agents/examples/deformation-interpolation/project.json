@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 14,
+  "name": "DUR technical loop",
+  "duration": 1,
+  "seed": 1827,
+  "lifecycle": "duration",
+  "profileId": "nwn-ee-duration-ascii-experimental-v1",
+  "locks": [],
+  "layers": [
+    {
+      "id": "panels",
+      "name": "Panele techniczne",
+      "type": "mesh",
+      "enabled": true,
+      "color": "#ffffff",
+      "alpha": 1,
+      "start": 0,
+      "duration": 1,
+      "position": [
+        0,
+        0,
+        1.2
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "scale": 1,
+      "geometry": {
+        "kind": "custom",
+        "vertices": [
+          [
+            -0.1,
+            0,
+            0
+          ],
+          [
+            -1,
+            0,
+            0.55
+          ],
+          [
+            -0.8,
+            0,
+            -0.4
+          ],
+          [
+            0.1,
+            0,
+            0
+          ],
+          [
+            0.8,
+            0,
+            -0.4
+          ],
+          [
+            1,
+            0,
+            0.55
+          ]
+        ],
+        "faces": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ],
+        "uv": [
+          [
+            0.5,
+            0.5
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            0.5
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "uvFaces": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      "animation": {
+        "vertices": [
+          {
+            "time": 0,
+            "value": [
+              [
+                -0.1,
+                0,
+                0
+              ],
+              [
+                -1,
+                0,
+                0.55
+              ],
+              [
+                -0.8,
+                0,
+                -0.4
+              ],
+              [
+                0.1,
+                0,
+                0
+              ],
+              [
+                0.8,
+                0,
+                -0.4
+              ],
+              [
+                1,
+                0,
+                0.55
+              ]
+            ]
+          },
+          {
+            "time": 0.13,
+            "value": [
+              [
+                -0.1,
+                0,
+                0
+              ],
+              [
+                -1,
+                0.12,
+                0.55
+              ],
+              [
+                -0.8,
+                0.12,
+                -0.4
+              ],
+              [
+                0.1,
+                0,
+                0
+              ],
+              [
+                0.8,
+                0.12,
+                -0.4
+              ],
+              [
+                1,
+                0.12,
+                0.55
+              ]
+            ]
+          },
+          {
+            "time": 0.41,
+            "value": [
+              [
+                -0.1,
+                0,
+                0
+              ],
+              [
+                -1,
+                0,
+                0.55
+              ],
+              [
+                -0.8,
+                0,
+                -0.4
+              ],
+              [
+                0.1,
+                0,
+                0
+              ],
+              [
+                0.8,
+                0,
+                -0.4
+              ],
+              [
+                1,
+                0,
+                0.55
+              ]
+            ]
+          },
+          {
+            "time": 0.76,
+            "value": [
+              [
+                -0.1,
+                0,
+                0
+              ],
+              [
+                -1,
+                -0.1,
+                0.55
+              ],
+              [
+                -0.8,
+                -0.1,
+                -0.4
+              ],
+              [
+                0.1,
+                0,
+                0
+              ],
+              [
+                0.8,
+                -0.1,
+                -0.4
+              ],
+              [
+                1,
+                -0.1,
+                0.55
+              ]
+            ]
+          },
+          {
+            "time": 1,
+            "value": [
+              [
+                -0.1,
+                0,
+                0
+              ],
+              [
+                -1,
+                0,
+                0.55
+              ],
+              [
+                -0.8,
+                0,
+                -0.4
+              ],
+              [
+                0.1,
+                0,
+                0
+              ],
+              [
+                0.8,
+                0,
+                -0.4
+              ],
+              [
+                1,
+                0,
+                0.55
+              ]
+            ]
+          }
+        ]
+      },
+      "texture": "asset:c394a9bc8b8aaa901cba52c9f455128d048d79e07ea9cebb9b4cbac42366ec0f",
+      "deformationInterpolation": "monotone-cubic-loop"
+    }
+  ],
+  "orientWithObject": true,
+  "assets": [
+    {
+      "id": "c394a9bc8b8aaa901cba52c9f455128d048d79e07ea9cebb9b4cbac42366ec0f",
+      "name": "technical-panels.png",
+      "mime": "image/png",
+      "width": 8,
+      "height": 8,
+      "pngBase64": "iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAAG1JREFUeJwVyqERwzAMAMAO1gEKC4KKAgxzxsK6QIEgTZdd0jd49q/7+37uH4NJkBT9foSPwGASJEV/VtgEBpMgKXpbYRcYTIKk6H2FQ2AwCZKijxVCYDAJkqJjhVNgMAmSos8VLoHBJEiKvp4/8lKtAaXGuBwAAAAASUVORK5CYII=",
+      "source": {
+        "fileName": "technical-panels.png",
+        "sha256": "c394a9bc8b8aaa901cba52c9f455128d048d79e07ea9cebb9b4cbac42366ec0f"
+      }
+    }
+  ]
+}
