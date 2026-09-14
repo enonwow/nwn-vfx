@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 16,
+  "name": "Technical custom beam",
+  "duration": 3,
+  "seed": 1827,
+  "lifecycle": "beam",
+  "profileId": "nwn-ee-beam-ascii-experimental-v1",
+  "locks": [],
+  "layers": [
+    {
+      "id": "beam",
+      "name": "Własny beam",
+      "type": "beam",
+      "enabled": true,
+      "color": "#9b152b",
+      "alpha": 0.8,
+      "width": 0.045,
+      "texture": "glow",
+      "blend": "additive",
+      "source": [
+        0,
+        0,
+        1.2
+      ],
+      "target": [
+        0,
+        3,
+        1.2
+      ],
+      "radius": 0.08,
+      "delay": 0.05,
+      "lightningScale": 0.15,
+      "segments": 16,
+      "seed": 42,
+      "flow": {
+        "direction": "target-to-source",
+        "speed": 1.2
+      }
+    }
+  ]
+}

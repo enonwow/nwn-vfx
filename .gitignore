@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+
+# Build output and caches
+dist/
+.vite/
+.cache/
+*.tsbuildinfo
+# Regenerated from canonical schemas by npm lifecycle scripts
+/apps/web/src/generated/webmcp-contracts.ts
+
+# Locally packed Studio releases
+nwn-vfx-studio-*.tgz
+
+# Python tooling used by audit scripts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local Studio data and generated artifacts
+.local/
+.nwn-vfx/
+output/
+
+# Test results
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+blob-report/
+
+# Logs and local environment
+*.log
+.env
+.env.*
+!.env.example
+
+# Temporary editor and operating system files
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

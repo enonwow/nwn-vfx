@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 17,
+  "name": "Technical beam motion",
+  "duration": 3,
+  "seed": 1827,
+  "lifecycle": "beam",
+  "profileId": "nwn-ee-beam-ascii-experimental-v1",
+  "locks": [],
+  "layers": [
+    {
+      "id": "beam",
+      "name": "Własny beam",
+      "type": "beam",
+      "enabled": true,
+      "color": "#ffffff",
+      "alpha": 1,
+      "width": 0.08,
+      "texture": "asset:7b3f823bf75a6f0a174493abe2e44b3fbf29474411e2724ac45595499e7ce692",
+      "blend": "additive",
+      "source": [
+        0,
+        0,
+        1.2
+      ],
+      "target": [
+        0,
+        3,
+        1.2
+      ],
+      "radius": 0,
+      "delay": 0.05,
+      "lightningScale": 0,
+      "segments": 2,
+      "seed": 42,
+      "flow": {
+        "direction": "target-to-source",
+        "speed": 1.2
+      },
+      "nativeMotion": {
+        "phase": "flow",
+        "direction": "target-to-source",
+        "fps": 16,
+        "pulseWidth": 0.25,
+        "fit": "alpha-bounds"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "7b3f823bf75a6f0a174493abe2e44b3fbf29474411e2724ac45595499e7ce692",
+      "name": "beam-fixture.png",
+      "mime": "image/png",
+      "width": 16,
+      "height": 16,
+      "pngBase64": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAE9JREFUeJztzNEUwCAAQNEU9ve+pzCFKaSQQgoppJBCCimkkMKbRmenC3DDsQMJLi4nt4PHzmsjWkkWspliohppvnQfhjfTi2VA/xAcG/gAAzGFgTfdD0IAAAAASUVORK5CYII=",
+      "source": {
+        "fileName": "beam-fixture.png",
+        "sha256": "7b3f823bf75a6f0a174493abe2e44b3fbf29474411e2724ac45595499e7ce692"
+      }
+    }
+  ]
+}

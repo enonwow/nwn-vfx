@@ -1,0 +1,62 @@
+#MAXMODEL ASCII
+# Independently authored static orientation fixture, not produced by the writer.
+# Axis-angle rotates local +Z towards -Y; the emitter's parent stays neutral.
+# This fixture has not been run in NWN.
+newmodel oriented_fixture
+setsupermodel oriented_fixture NULL
+classification EFFECT
+setanimationscale 1
+beginmodelgeom oriented_fixture
+node dummy oriented_fixture
+  parent NULL
+endnode
+node dummy origin
+  parent oriented_fixture
+  position 1 -2 3
+  orientation 0 0 1 0
+  scale 2
+endnode
+node emitter plume
+  parent origin
+  position 0 0 0
+  orientation 1 0 0 1.5707963267948966
+  update Fountain
+  render Normal
+  texture fixture_glow
+  mass -0.25
+  spread 0.2
+  velocity 3
+  inherit 0
+  inheritvel 0
+  inherit_local 0
+  inherit_part 0
+  grav 0
+endnode
+endmodelgeom oriented_fixture
+newanim impact oriented_fixture
+  length 2
+  transtime 0
+  animroot oriented_fixture
+node dummy oriented_fixture
+  parent NULL
+endnode
+node dummy origin
+  parent oriented_fixture
+  positionkey 1
+    0 1 -2 3
+  endlist
+  scalekey 1
+    0 2
+  endlist
+endnode
+node emitter plume
+  parent origin
+  birthratekey 4
+    0 0
+    0.001 20
+    0.999 20
+    1 0
+  endlist
+endnode
+doneanim impact oriented_fixture
+donemodel oriented_fixture

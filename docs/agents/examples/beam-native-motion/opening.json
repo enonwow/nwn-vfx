@@ -1,0 +1,18 @@
+[
+  {
+    "type": "layer.set",
+    "layerId": "beam",
+    "values": {
+      "segments": 2,
+      "radius": 0,
+      "lightningScale": 0,
+      "nativeMotion": {
+        "phase": "opening",
+        "direction": "target-to-source",
+        "fps": 16,
+        "pulseWidth": 0.25,
+        "fit": "alpha-bounds"
+      }
+    }
+  }
+]

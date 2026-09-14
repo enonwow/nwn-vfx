@@ -1,0 +1,13 @@
+# Native test dependency status — contract v1
+
+This contract is read-only. `native.test.status({candidateId})` accepts the ID of an existing `candidate.build` job and requires `read` access to that job's project. CLI: `nwn-vfx --json native test status --candidate <build-job-id>`. WebMCP: `studio.native.test.status({viewSessionId,input:{candidateId}})` in a granted tab. The input cannot contain file paths, a native verdict, or caller-authored evidence.
+
+The result binds the project, revision and canonical snapshot SHA-256. It distinguishes `candidate_pending`, `candidate_failed` and `awaiting_qualified_runner`. A successful export supplies candidate artifact metadata only. Native artifacts remain an empty list, `proofCompleteness` is `missing`, and `nativeVerified` and `nativeTestAvailable` are false while no qualified runner is configured. External native work is `not_observed_by_studio`; the service must not infer its state from a candidate's name, source directory, a successful preview, or a caller's claim.
+
+Dependencies identify candidate resources, native geometry, a bound entry-surface observation, the qualified runtime runner, runtime capture and final runtime validation. A ready candidate does not satisfy any native dependency. A failure in candidate construction is reported separately from an absent runner. `native.test.request` remains unavailable, queues nothing and returns `CAPABILITY_UNAVAILABLE` with this concrete dependency status after checking project access. It cannot launch NWN or Toolset.
+
+Limits: one candidate ID (the existing bounded ID schema), six dependencies and the existing maximum of 512 artifact metadata records. No document data, local storage path, binary evidence, credentials or arbitrary JSON is returned. The API envelope stays 0.1.0. A future configured runner/evidence-ingestion contract requires a separate review; this status contract cannot produce a positive native verdict.
+
+The canonical external workflow remains the central Aurora binary native-geometry route followed by AUR-S07. The application's status is not a substitute for the central profile, actual human observation, bound native Save/readback, or validated runtime evidence. A lack of an automated observer must remain visible when handing work to another agent.
+
+Verification must cover successful, pending and failed candidate builds, wrong job type, unknown ID, denied project/scope, forged evidence input, false positive output, unchanged revision/job counts and WebMCP forwarding through the common operation. No live NWN/Toolset test is part of this contract's offline tests.

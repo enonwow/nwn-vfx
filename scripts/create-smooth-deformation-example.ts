@@ -1,0 +1,10 @@
+import {mkdir,writeFile} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {smoothDeformationExample} from '../tests/fixtures/smooth-deformation.js';
+import {assertDocument} from '../packages/contracts/src/schema.js';
+const fixture=smoothDeformationExample(),out=resolve('docs/agents/examples/smooth-deformation');assertDocument(fixture.document);
+await mkdir(out,{recursive:true});
+await writeFile(join(out,'source-document.json'),JSON.stringify(fixture.document,null,2)+'\n');
+await writeFile(join(out,'camera.json'),JSON.stringify(fixture.camera,null,2)+'\n');
+await writeFile(join(out,'smooth.json'),JSON.stringify([{type:'layer.set',layerId:fixture.layer.id,values:{shading:'smooth'}}],null,2)+'\n');
+console.log(JSON.stringify({directory:out,layerId:fixture.layer.id,duration:2,keys:fixture.layer.animation.vertices?.length}));

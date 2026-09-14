@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {execute,connection,health} from '../apps/cli/src/client.js';
+import {canonical,hash} from '../apps/service/src/store.js';
+const out=resolve('output/releases/0.15.2');await mkdir(out,{recursive:true});
+const service=await health(await connection({}));assert.equal(service.version,'0.15.2');
+const sourceId='3bd62c64-9803-41b2-8334-d43c1b9a4706',sourceRevision=8;
+const result=await execute('projects.fork',{projectId:sourceId,revision:sourceRevision,newProjectId:'studio-clip-volume-0152',name:'TEST — Głośność klipu 0.15.2'}, {},'studio-clip-volume-0152-fork-v1');
+assert.equal(result.status,'ok',JSON.stringify(result.error));const project=result.data as any;
+const clip=project.document.audioClips[0];assert.equal(clip.gain,1);
+await writeFile(join(out,'gain-50.json'),JSON.stringify([{type:'audio.set',clipId:clip.id,values:{gain:.5}}],null,2)+'\n');
+const proof={service,projectId:project.id,revision:project.revision,clipId:clip.id,sourceId,sourceRevision,sourceAudioHash:hash(canonical(project.document.audioAssets)),sourceGain:clip.gain};
+await writeFile(join(out,'fixture.json'),JSON.stringify(proof,null,2)+'\n');console.log(JSON.stringify(proof));

@@ -1,0 +1,1082 @@
+{
+  "release": "0.15.1",
+  "createdAt": "2026-09-08T01:11:13.262Z",
+  "gitState": "unborn/untracked workspace; hashes record local source, not a commit",
+  "package": {
+    "path": "output/releases/nwn-vfx-studio-0.15.1.tgz",
+    "bytes": 2180205,
+    "sha256": "f78fa7a715fb8f34907d7db562e6760545bf40d4b8aa9e7cd384a2ccaaebbe37"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 68,
+      "sha256": "fd1e897df6b7d3c60a6d4b17cf3bff09abd90688cc22db0e7f1b3de6e4a04086"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 538,
+      "sha256": "2aadd78379f4fc045b47951d87eb3a8fefce6e40e8ac8b978f86f1e68956bce3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10049,
+      "sha256": "d7a126309737e8a5665c8bc5a4405703fea26acad780fd92337b35ce1daf3472"
+    },
+    {
+      "path": "apps/cli/src/client.ts",
+      "bytes": 14680,
+      "sha256": "60210ffe051d58801754a0b428a03d414d97d7fe9f9c7d0787708a4f56dae55e"
+    },
+    {
+      "path": "apps/cli/src/main.ts",
+      "bytes": 30481,
+      "sha256": "87f2bfe1fba8017da9183ffa370e69eb14120f78a71ea91e68b448a93dabc0a0"
+    },
+    {
+      "path": "apps/service/src/app.ts",
+      "bytes": 15889,
+      "sha256": "897c547a18aaa5a7d358332003c8e249f1f5d906e888a9d1b09f35c3db351f74"
+    },
+    {
+      "path": "apps/service/src/audio-import.ts",
+      "bytes": 2608,
+      "sha256": "20c6253d3d63cd7efe86aba3e72fba35119b1bb7f38e256a4c7668e395be9eb8"
+    },
+    {
+      "path": "apps/service/src/commands.ts",
+      "bytes": 41830,
+      "sha256": "9d74a80f045d7e10895b0f2ee81906e64613c296135b73a4926cc31cd4091533"
+    },
+    {
+      "path": "apps/service/src/jobs.ts",
+      "bytes": 6939,
+      "sha256": "5e1ecc8defbf4d4b13a8181784775df8e73e2728f2d3a45a532117dc183a2252"
+    },
+    {
+      "path": "apps/service/src/main.ts",
+      "bytes": 1154,
+      "sha256": "652d8339b483803afcf4c598d63e255fadbcc128202b004da1a7bf6936872093"
+    },
+    {
+      "path": "apps/service/src/native-status.ts",
+      "bytes": 2196,
+      "sha256": "cd0fc8a1f0cacb4913e1f4d25150c201568e9cd7b11218fb20b8d50ab148b82f"
+    },
+    {
+      "path": "apps/service/src/project-bundle.ts",
+      "bytes": 11152,
+      "sha256": "1594e2b9877f7a4ce48960696832d859eebd371ed576e72ed12878b0ebfad71f"
+    },
+    {
+      "path": "apps/service/src/render-errors.ts",
+      "bytes": 6414,
+      "sha256": "e652bc3a89022d9d655f8ba2ad2eeaa33d20a169c65568527b49181490e8b9c2"
+    },
+    {
+      "path": "apps/service/src/render.ts",
+      "bytes": 9626,
+      "sha256": "b0b1a401921582e3f4113b3a01a53714b6f6dfd74e52ad2a83e8912961551022"
+    },
+    {
+      "path": "apps/service/src/store.ts",
+      "bytes": 10169,
+      "sha256": "68a8fabd707a22f7f00e2eef23cae5f6e6e953cfb8d75a2a9a2ecb61cc7a175e"
+    },
+    {
+      "path": "apps/service/src/video-encoder.ts",
+      "bytes": 6396,
+      "sha256": "dd58899ecefebd37bb7c2062e43509f9526a23a1ebb0fc2126fce04962ec56db"
+    },
+    {
+      "path": "apps/service/src/webmcp-sessions.ts",
+      "bytes": 7478,
+      "sha256": "e059134aea3eeb3e650c949a98e85d55ad103bb17bbd4a8a5bc66e21e145bd20"
+    },
+    {
+      "path": "apps/web/index.html",
+      "bytes": 445,
+      "sha256": "c450d30c01256aef6c7b78be2d584ba3b482376389e501d760b65f27525cdff2"
+    },
+    {
+      "path": "apps/web/src/AudioEditor.tsx",
+      "bytes": 7041,
+      "sha256": "865fd812f002d0c9044cc1a4a8816fbcdb417aaed170a0ebe61edb28303ef555"
+    },
+    {
+      "path": "apps/web/src/EmitterOrientation.tsx",
+      "bytes": 4694,
+      "sha256": "7a5eb14d178417c52d920d632a35b63db8c6cf53496892f3eaa06a217b699d09"
+    },
+    {
+      "path": "apps/web/src/MeshInspector.tsx",
+      "bytes": 16770,
+      "sha256": "ac20fbbcdced793db13ed2f258f873877b1fd881f3579ac94dccd6211c25630b"
+    },
+    {
+      "path": "apps/web/src/ObjImportInspector.tsx",
+      "bytes": 9158,
+      "sha256": "413269484c176fa549cb826f91d7c37814a135866dadb1a4aee00121761c35dd"
+    },
+    {
+      "path": "apps/web/src/PaletteDialog.tsx",
+      "bytes": 6316,
+      "sha256": "861e4793bab7f54cfce50f8ff63084daa1e8d3844ddbd6e224026636fe3d1c0e"
+    },
+    {
+      "path": "apps/web/src/TextureInspector.tsx",
+      "bytes": 6431,
+      "sha256": "ebde3f74c8860028a34f229c3627ded17c5e06744a3085242fbe8033914c6679"
+    },
+    {
+      "path": "apps/web/src/TrailInspector.tsx",
+      "bytes": 4053,
+      "sha256": "b4a0e92843ac67c212f39ba157ee5e44b980acff55e0b6d31e3c86d2d85d1f7e"
+    },
+    {
+      "path": "apps/web/src/api.ts",
+      "bytes": 999,
+      "sha256": "3719c8707f0fca1820768974473d8c88ef8421e809388bbf0bf63aa06ea3faeb"
+    },
+    {
+      "path": "apps/web/src/audio-player.ts",
+      "bytes": 3370,
+      "sha256": "e0a52d87c3e0d5747448a026718cde36484dc3847cfe640412fdc99de636aa47"
+    },
+    {
+      "path": "apps/web/src/browser-contracts.ts",
+      "bytes": 1024,
+      "sha256": "e0c695b178bed09f45b0a0a68af53e5d6dd2eedfdd864462f87a4a388630f42e"
+    },
+    {
+      "path": "apps/web/src/env.d.ts",
+      "bytes": 38,
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    },
+    {
+      "path": "apps/web/src/generated/webmcp-contracts.ts",
+      "bytes": 29759115,
+      "sha256": "a257f717e1f3a66729094936f38a4035f78fd752d999e2dd66683d53e251eed7"
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "bytes": 67835,
+      "sha256": "b33f381cded8cb180bb2a5bb074a714ae61cdf25463f797837ea5c85523a17ef"
+    },
+    {
+      "path": "apps/web/src/style.css",
+      "bytes": 29793,
+      "sha256": "137ff94246e464d09e0f4a87b5eaa20ede3dd0c3f9666579ed69dc809bd6a525"
+    },
+    {
+      "path": "apps/web/src/webmcp-descriptions.ts",
+      "bytes": 2113,
+      "sha256": "403306c19be8b31df3a5263545466aa3dad0a564e1d698986c460f8e168660db"
+    },
+    {
+      "path": "apps/web/src/webmcp-schemas.ts",
+      "bytes": 7678,
+      "sha256": "ec45a904b86f093a6086bc857dbafdf359274446a2bcabed05500c4a081ddb49"
+    },
+    {
+      "path": "apps/web/src/webmcp.ts",
+      "bytes": 20048,
+      "sha256": "ff5d10640508e6724d3de85eadef00c3e4137e52800478aa2d73b75dbfb7a692"
+    },
+    {
+      "path": "docs/agents/animmesh-export-audit.md",
+      "bytes": 3694,
+      "sha256": "58698464a1ff57924aaeb07d7f99c0bab2d8a82dcf68a4e20a3c1432f6e3a2bf"
+    },
+    {
+      "path": "docs/agents/audio.md",
+      "bytes": 8359,
+      "sha256": "b36c339a9cc1aa5712dda8f4c633b9ee000f46383e581d3fe587a4601c15fbc8"
+    },
+    {
+      "path": "docs/agents/binary-export.md",
+      "bytes": 4892,
+      "sha256": "de0043c318d9fcb698b746a16a4ef6b2f67b527345350907f9fcbab887151736"
+    },
+    {
+      "path": "docs/agents/camera.md",
+      "bytes": 3463,
+      "sha256": "51fe54005d23f4a119695858dc0a3f7eb76707819a7b05782ed3aba7fd6273ea"
+    },
+    {
+      "path": "docs/agents/cli.md",
+      "bytes": 12570,
+      "sha256": "843237d81fc683024e17d79a16a9a1b16753515292aebff79e3df675ee75f8bb"
+    },
+    {
+      "path": "docs/agents/emitter-orientation.md",
+      "bytes": 5435,
+      "sha256": "5de385f24da4e5a6b6cc304b242daf5206ad6147d3752c57225b2e602eb1f2b9"
+    },
+    {
+      "path": "docs/agents/examples/deformation/camera.json",
+      "bytes": 108,
+      "sha256": "fa3901cf3a9be64894cab76d38462d5c6107e617f56d278a353ac287527d996e"
+    },
+    {
+      "path": "docs/agents/examples/deformation/changes.json",
+      "bytes": 5274,
+      "sha256": "bf543b138edacdd2ca4c892bd1337556ef0945a2ac2803a6849b551fe1309712"
+    },
+    {
+      "path": "docs/agents/examples/deformation/effect-document.json",
+      "bytes": 9480,
+      "sha256": "15a3acd020538e5cd8ce2c494cef3a12a5aee1ea43b095c89af66a030e720995"
+    },
+    {
+      "path": "docs/agents/examples/deformation/red-surface.png",
+      "bytes": 2854,
+      "sha256": "019b5fa069128fe17aa78352287fd9e3f47d7a43466c0b0a1885954e6a86ff40"
+    },
+    {
+      "path": "docs/agents/examples/mesh-impact.changes.json",
+      "bytes": 9997,
+      "sha256": "9a1fb82cd0f73c1211d952b0fe12abed4752edd9b65a16136cb71037fa21f58b"
+    },
+    {
+      "path": "docs/agents/examples/shading/camera.json",
+      "bytes": 106,
+      "sha256": "6c35d03968a83ff092505b27c4614ac6dfdc5d6d4c56d7c043ca7f8c7220b689"
+    },
+    {
+      "path": "docs/agents/examples/shading/changes.json",
+      "bytes": 111537,
+      "sha256": "14a18de02d725693fc0cf7ad4c18ce14fc03746090e988222b98f9291b9431b7"
+    },
+    {
+      "path": "docs/agents/examples/shading/effect-document.json",
+      "bytes": 112033,
+      "sha256": "1db897878c998275609daa9e67c82bac4496ccd8abdfc1dad4927dee12d07d00"
+    },
+    {
+      "path": "docs/agents/examples/shading/ivory.png",
+      "bytes": 88,
+      "sha256": "9f98151fb6c12d59fc134ec45cedf2ce95dd1974724cad962c278e4edd8c9baa"
+    },
+    {
+      "path": "docs/agents/examples/smooth-deformation/camera.json",
+      "bytes": 106,
+      "sha256": "6c35d03968a83ff092505b27c4614ac6dfdc5d6d4c56d7c043ca7f8c7220b689"
+    },
+    {
+      "path": "docs/agents/examples/smooth-deformation/smooth.json",
+      "bytes": 117,
+      "sha256": "7d60ea8df458ac94204fc31fe9d787921535d6f97c9c4a2e63aec4e2c806d2de"
+    },
+    {
+      "path": "docs/agents/examples/smooth-deformation/source-document.json",
+      "bytes": 298962,
+      "sha256": "6e2658ce4ef99d46b2e35f321f9829af0d537f47084eaf0c99a3aa8f47321c03"
+    },
+    {
+      "path": "docs/agents/mesh-deformation.md",
+      "bytes": 10444,
+      "sha256": "d6150fc39ca5a8293efb1f80817fa52038723c1b9cb052c9ae31c3e2772f0a1e"
+    },
+    {
+      "path": "docs/agents/mesh-shading.md",
+      "bytes": 7386,
+      "sha256": "08c6083335f7b441f64f75b42ed2d3fb22907aedb97001b452f969b42bcb5a24"
+    },
+    {
+      "path": "docs/agents/mesh.md",
+      "bytes": 7900,
+      "sha256": "24862cd7e6c0cba0e3db71c32da82132b9cbc21cf86668a80cc0c03252dd85f6"
+    },
+    {
+      "path": "docs/agents/native-test-status.md",
+      "bytes": 2618,
+      "sha256": "d0aea9aea12a2e1fc38c5a47afb5d4bd3e5cd80c24ad7db78ae87d8d0df69df9"
+    },
+    {
+      "path": "docs/agents/obj-material.md",
+      "bytes": 7586,
+      "sha256": "f2ddd833311a031addbb17ff978c6ad9e868e5c33a678db673855507d251ed64"
+    },
+    {
+      "path": "docs/agents/palette.md",
+      "bytes": 7110,
+      "sha256": "c88476f478b978fa217ef62295a5da936b437b366c46b78bb2b8691edb62b45b"
+    },
+    {
+      "path": "docs/agents/smooth-deformation.md",
+      "bytes": 7442,
+      "sha256": "e085b383833391085a91f34f2da1fd32b9442c0e7ed232fd7d8376a8296ff2cc"
+    },
+    {
+      "path": "docs/agents/textures.md",
+      "bytes": 8560,
+      "sha256": "8422b917d3fae2eb93a33247cffff12ad13cf125865d51a021cbecc37f2b45d9"
+    },
+    {
+      "path": "docs/agents/tga-origin.md",
+      "bytes": 4264,
+      "sha256": "9dd4ff22743c752019dfef04014f8261c86ff36376c0a6cb7acd091e42a3ab93"
+    },
+    {
+      "path": "docs/agents/trails.md",
+      "bytes": 7378,
+      "sha256": "2b3ff0a0edd28396a2272740d98c3f5d49bb646f0fd9bb77f8c877535ad6dafa"
+    },
+    {
+      "path": "docs/agents/webmcp.md",
+      "bytes": 11215,
+      "sha256": "ce121f07f61dc43f632044c48a71e59a7f9a867ccdad181274d964af7e1fd9af"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 133224,
+      "sha256": "f2d6158b236b42f5f25bc6fcf0d3c97ee2fc17a6892cbde74bd9e5422a73030b"
+    },
+    {
+      "path": "package.json",
+      "bytes": 2300,
+      "sha256": "813b811fc34ca4b18bd37bb3eb2943c2bd2a1408b45b80f6dde63ac44442a774"
+    },
+    {
+      "path": "packages/contracts/src/schema.ts",
+      "bytes": 54449,
+      "sha256": "c240c9ca77d63d48e856672575daad2db66e79024d55e745ca0ab8301b1a1825"
+    },
+    {
+      "path": "packages/core/src/audio.ts",
+      "bytes": 9108,
+      "sha256": "874631909610169691b6159b42fd5ae699e9f498e7b4ddc325f1901b63f0b736"
+    },
+    {
+      "path": "packages/core/src/authoring-capabilities.ts",
+      "bytes": 625,
+      "sha256": "cc81f61df8b687318d4a646e7bb57f70a7c0843525b776e3936acbafbad16a1b"
+    },
+    {
+      "path": "packages/core/src/camera.ts",
+      "bytes": 1817,
+      "sha256": "24f86b14c28c022e6a1b0d50ea6dfa97596eafac7a089471e941d76ff8fa4004"
+    },
+    {
+      "path": "packages/core/src/constants.ts",
+      "bytes": 51,
+      "sha256": "2f6b8a8976d5f4bdd3e14d64921c881d21d59ac3ca93695583420b2207d7a2ec"
+    },
+    {
+      "path": "packages/core/src/deformation.ts",
+      "bytes": 5553,
+      "sha256": "0a1ee29bb2d46da135ad242507c8eb7b2fc268743d31028f09bd7442ab5e613e"
+    },
+    {
+      "path": "packages/core/src/export-profiles.ts",
+      "bytes": 431,
+      "sha256": "642a0946aacba894dfabd44e6e8b77f0f8a1626088ef657be03989cbfdd79aad"
+    },
+    {
+      "path": "packages/core/src/mesh.ts",
+      "bytes": 9941,
+      "sha256": "a69936dac8a4132aba27dd1d4a1874f3d6214153834f28cb355721ed0b78f2ce"
+    },
+    {
+      "path": "packages/core/src/model.ts",
+      "bytes": 16194,
+      "sha256": "21ba7945e49159a50ae927282da0fe37474217873c816c56b824e7874a48d213"
+    },
+    {
+      "path": "packages/core/src/native-workflow.ts",
+      "bytes": 431,
+      "sha256": "914a849137116671552bb6c682aec1d41c02781045907ce1a90e81e350a41f7a"
+    },
+    {
+      "path": "packages/core/src/normal-motion.ts",
+      "bytes": 3234,
+      "sha256": "7d2216059f2bb579fbb7cfa6fe95c765c8b722920ef194be0116aaa956742aa0"
+    },
+    {
+      "path": "packages/core/src/obj.ts",
+      "bytes": 16210,
+      "sha256": "6cbf34ea8d00b698b2ce7389394c3e611dd3338c1f55623d0b8cb008ba7410cf"
+    },
+    {
+      "path": "packages/core/src/palette.ts",
+      "bytes": 8654,
+      "sha256": "c69bdd4d67d611cb0a62d736a437c0b353985a195dfee62b54f840e01f87d730"
+    },
+    {
+      "path": "packages/core/src/particles.ts",
+      "bytes": 1489,
+      "sha256": "425fc2d560452505fa2cf6dfa2f6fc348988d4d98ebcac8a6df708ad03ea489a"
+    },
+    {
+      "path": "packages/core/src/shading.ts",
+      "bytes": 4517,
+      "sha256": "cc2a5ed28c4ae8b546347bbabcd34c7e5b1ebf6a3f17e5887d7870ab454f308b"
+    },
+    {
+      "path": "packages/core/src/simulation.ts",
+      "bytes": 2300,
+      "sha256": "ff30bcea8b14c3d3ffcd1fa901ccaa464f941c78588749ea396e65171ddbb716"
+    },
+    {
+      "path": "packages/core/src/textures.ts",
+      "bytes": 21685,
+      "sha256": "b0c04fb7b6b7a1f7cdc94296379a9fe5f0026b3e2dc9724a05a23684066b60e5"
+    },
+    {
+      "path": "packages/core/src/trails.ts",
+      "bytes": 11255,
+      "sha256": "e3aa3a0cee28efcbc09c504ba9d48eb7ba19d78df87852c4eb21f411c79eb5e5"
+    },
+    {
+      "path": "packages/nwn-format/src/README.md",
+      "bytes": 12150,
+      "sha256": "5b4472dfbc55f622bfd4700c7524e01b645dbecc99cb770a7fbbaf04b885e3e0"
+    },
+    {
+      "path": "packages/nwn-format/src/audio-export.ts",
+      "bytes": 4400,
+      "sha256": "76aa196106845cff46b88344771583b2c5b8374d8c8b8ec00f32ec8b0f06db80"
+    },
+    {
+      "path": "packages/nwn-format/src/binary-geometry.ts",
+      "bytes": 9235,
+      "sha256": "eea7261f0800f6d48a2898620ecb6eed39fe96425a1967b2cd2dd8ef1bce8fd6"
+    },
+    {
+      "path": "packages/nwn-format/src/binary-normals.ts",
+      "bytes": 7491,
+      "sha256": "dbfd0612353f9e8b02d0128d323e70b5e25dfcab701aa62a61b25cd763c1f52c"
+    },
+    {
+      "path": "packages/nwn-format/src/binary.ts",
+      "bytes": 7088,
+      "sha256": "e839a95afded4334b15a6c85a9cb1444b88696b026c04c65892cf716b9657b2f"
+    },
+    {
+      "path": "packages/nwn-format/src/compiled-candidate.ts",
+      "bytes": 7483,
+      "sha256": "f9d7a5f12f93d00deed8b09d47a07c41f860d0f8ccae0fa10066f283e66bf0bd"
+    },
+    {
+      "path": "packages/nwn-format/src/compiled-readback.ts",
+      "bytes": 6349,
+      "sha256": "b226e38a7b74bcf8a9c6a3c0258c9e01c849a2ae7778dd6dad6d2d87774c4ea7"
+    },
+    {
+      "path": "packages/nwn-format/src/index.ts",
+      "bytes": 28718,
+      "sha256": "64df0e905d81019baf3ce2302d816f109806687c3bd7371c450757b5ddad8061"
+    },
+    {
+      "path": "packages/nwn-format/src/mdl-reader.ts",
+      "bytes": 13219,
+      "sha256": "3bf32cd7ff151c7b805178d931245166f7d9c77ba57a5525b7962f3fd3577919"
+    },
+    {
+      "path": "packages/nwn-format/src/mdl-writer.ts",
+      "bytes": 13473,
+      "sha256": "07cfd093a8ab69a7a960ddc4f271a5378ad0d76fcc7c047fa5bccdcb6e6bb6be"
+    },
+    {
+      "path": "packages/nwn-format/src/mesh-readback.ts",
+      "bytes": 10254,
+      "sha256": "7cd4d5018704baad1d06c4a89c454c3b832e82d154fbd84869a395ef02593c9b"
+    },
+    {
+      "path": "packages/nwn-format/src/mesh-writer.ts",
+      "bytes": 11944,
+      "sha256": "547e8bb6350aec75b1ed7bfd089285c37f2887592a5682ee85bf735dbd52b08f"
+    },
+    {
+      "path": "packages/nwn-format/src/normal-samples.ts",
+      "bytes": 826,
+      "sha256": "97c75686a80147c241de37dfcdafa2560a1d1f5c97b7d253d4fcf41ba86a47af"
+    },
+    {
+      "path": "packages/nwn-format/src/textures.ts",
+      "bytes": 3023,
+      "sha256": "bdc8588ae3eff30ad12895beae3fc5007082a1f87da68407bec76959632480ba"
+    },
+    {
+      "path": "packages/nwn-format/src/trail-writer.ts",
+      "bytes": 4894,
+      "sha256": "c358b606020a91bc0781216c1d1077c4d0c5a404236daf36538aaf729ba40365"
+    },
+    {
+      "path": "packages/renderer/src/index.ts",
+      "bytes": 19239,
+      "sha256": "cafcdacec02509c614110953522de2e40839fc3d1f347d72a865f6be6160dd35"
+    },
+    {
+      "path": "scripts/accept-audio-installed.ts",
+      "bytes": 7087,
+      "sha256": "4e7603b43bc44a552e549a0072fea2a4f402a04327cefe0b584afce3b318f10e"
+    },
+    {
+      "path": "scripts/accept-deformation-installed.ts",
+      "bytes": 5165,
+      "sha256": "b352d88c40233c77675e624e88ba62b4f0d55b25c41d8e6cc9eb5e69a49bae34"
+    },
+    {
+      "path": "scripts/accept-mesh.ts",
+      "bytes": 5760,
+      "sha256": "bfa31327584f439128cd02038deabe31a94a073a4f0f293c25c687f2bd8d45a8"
+    },
+    {
+      "path": "scripts/accept-normalization.ts",
+      "bytes": 9633,
+      "sha256": "9d77e4ada153fe7bc837395d8d8b57736fbc904860c6c0dd359f3008ae11c785"
+    },
+    {
+      "path": "scripts/accept-obj-sources.ts",
+      "bytes": 1368,
+      "sha256": "b3a86e489fd8f6983fb11ad72c341dd63ca8a828440605a78e9df0e31f19a2ff"
+    },
+    {
+      "path": "scripts/accept-orientation-installed.ts",
+      "bytes": 7839,
+      "sha256": "8675aa7e3af4515ee80f38e031d36e302d1423d7f8a2574996f8382fd038db9f"
+    },
+    {
+      "path": "scripts/accept-palette-installed.ts",
+      "bytes": 3379,
+      "sha256": "7296770e9e4ea9d441a0caacd7c20e6fdf7dd8e27477eb64833002e0c5ff2b15"
+    },
+    {
+      "path": "scripts/accept-r17-installed.ts",
+      "bytes": 3082,
+      "sha256": "f11957f5ec6e82cbb6e579436f6f2abc71e1ab1eeb5dc640a587e6eff7049bc4"
+    },
+    {
+      "path": "scripts/accept-shading-installed.ts",
+      "bytes": 5282,
+      "sha256": "abfbaaf2e11fc8dfd33d9da61ab5af89f3449af980bb6e28aa20baa8c5d70b8b"
+    },
+    {
+      "path": "scripts/accept-smooth-deformation-installed.ts",
+      "bytes": 4932,
+      "sha256": "c71813f01618064da057515ad4790dcf28452402242cc4b308864d292e8ff688"
+    },
+    {
+      "path": "scripts/accept-textures.ts",
+      "bytes": 8392,
+      "sha256": "9b71525603c9605214a6e5c695804d449d084c38d88846f402aba12d978e0ba8"
+    },
+    {
+      "path": "scripts/accept-video-installed.ts",
+      "bytes": 5675,
+      "sha256": "25b74eb2e3b4cb3da7eed9621c54bf3e744d924fd75f014613341f8a294a6aca"
+    },
+    {
+      "path": "scripts/audit-native-hidden-frame.mjs",
+      "bytes": 5181,
+      "sha256": "45f5218d5675e89a0fba75b4fd6d8ef9810d10a4497fdd0819272976366328dc"
+    },
+    {
+      "path": "scripts/capture-particle-controls.ts",
+      "bytes": 1973,
+      "sha256": "2637acb2e12acf78833803eaca8cf056f1c275e3d95b97c330efdd9d07ca5963"
+    },
+    {
+      "path": "scripts/check-smooth-source.ts",
+      "bytes": 1820,
+      "sha256": "ec411d6989e2b0c3a6bccd8613612f31b33ebd90f2160c58b5a14530c826393f"
+    },
+    {
+      "path": "scripts/compare-heart-export.ts",
+      "bytes": 3745,
+      "sha256": "baa537b56370186642e6f7f0b97524837ce836c0414de6cf8ad0165b6d4f9f02"
+    },
+    {
+      "path": "scripts/compare-heart-texture.ts",
+      "bytes": 6791,
+      "sha256": "31ccbe15887564dd0246eb6d6fac7754e717fe6580cbd410b5d76a8c40fcf952"
+    },
+    {
+      "path": "scripts/create-smooth-deformation-example.ts",
+      "bytes": 856,
+      "sha256": "369c224e9d02fea42846205d349406c3f88935799cf6caf06d14b1db6ee57dc6"
+    },
+    {
+      "path": "scripts/diagnose-r17.ts",
+      "bytes": 4371,
+      "sha256": "503f7b0d2d6a5aa18957abbb01706d398eb810f3cdd238e45c25d5b55e1087ed"
+    },
+    {
+      "path": "scripts/generate-browser-contracts.ts",
+      "bytes": 3632,
+      "sha256": "0cb3a645a164a8e25ddaa397163f673ec3b7f84d6e95e646da4bcf8f94378cf1"
+    },
+    {
+      "path": "scripts/heart-export-audit.ts",
+      "bytes": 7124,
+      "sha256": "414c95498e96fd9d56d41556b6123d76e8366581e72061d96c13e0edc44211b4"
+    },
+    {
+      "path": "scripts/heart-texture-candidate.ts",
+      "bytes": 3465,
+      "sha256": "30d1c4d0f4613507363f7ab2a3925bbe5243df322dbb34722dd7abd90a1dc706"
+    },
+    {
+      "path": "scripts/heart-texture-orientation-audit.py",
+      "bytes": 3764,
+      "sha256": "f317a770289fb5e866f4f8c63ed42560f96f90922d7352c59f4a25ae87eea84d"
+    },
+    {
+      "path": "scripts/release-installed-snapshot.ts",
+      "bytes": 2153,
+      "sha256": "8bb64ef92b9273c0c294bce79651f816abd1e042b4a85c3e69a2f160b14eda56"
+    },
+    {
+      "path": "scripts/release-source-manifest.ts",
+      "bytes": 1416,
+      "sha256": "2f1c1a816a4141eef771d0f83d8b99b14737d19770dc235a180ab2ece48f71df"
+    },
+    {
+      "path": "scripts/trail-feasibility/browser.ts",
+      "bytes": 2156,
+      "sha256": "0d7561d601c5c3e801a2e1be248797b46f7e76dc8f93db3ce0a81d45b884160e"
+    },
+    {
+      "path": "scripts/trail-feasibility/format.ts",
+      "bytes": 4745,
+      "sha256": "7a47e69051a6a47af667ec45c6043e426ffc034dc38dd109705e80a04dc6fc7d"
+    },
+    {
+      "path": "scripts/trail-feasibility/geometry.ts",
+      "bytes": 5385,
+      "sha256": "408fdea705229de868613c72c01e1c1a994d1ebdb4e62f57773ec7310b004fa6"
+    },
+    {
+      "path": "scripts/trail-feasibility/run.ts",
+      "bytes": 9882,
+      "sha256": "9f36b5886900865886f98952f176ed2330f151d21826aaf6f9eb2eeddfc5f9f7"
+    },
+    {
+      "path": "scripts/trail-feasibility/verify-external.ts",
+      "bytes": 4153,
+      "sha256": "42c6e327e3228ef771cb0c57e7910a973a2a9f6cb9a1f6e8ab81f1c7fab1b8fe"
+    },
+    {
+      "path": "scripts/verify-audio-artifacts.ts",
+      "bytes": 3356,
+      "sha256": "8f301b2f06656da64fbf56d5d4564143fa99340bbe5074f025268592d45b7d61"
+    },
+    {
+      "path": "scripts/verify-r17-regression.ts",
+      "bytes": 1977,
+      "sha256": "6a023c01db9712fe9ba14396cef4adc8d3cefffc2c6e387c9ad5d3cc4027db0c"
+    },
+    {
+      "path": "scripts/verify-textured-video.ts",
+      "bytes": 20702,
+      "sha256": "13f1489794cde0c8951b3f0d53388739eaa528d8d222100f3a27ee30962fb687"
+    },
+    {
+      "path": "scripts/verify-wyrok-video.ts",
+      "bytes": 5081,
+      "sha256": "7e1b2dc87f8be2639a5bb5e3e3cd4aab944588396c69a8418d164226b35141d9"
+    },
+    {
+      "path": "scripts/write-deformation-example.ts",
+      "bytes": 829,
+      "sha256": "52b9da5b18ec9da67a95bfef17f587203f23003df9a37538e1b17c9a2b6ae47b"
+    },
+    {
+      "path": "scripts/write-mesh-example.ts",
+      "bytes": 753,
+      "sha256": "5a36bd1446a745552b69603c59fa28d8fb538dfe048720e690fce221214e69f0"
+    },
+    {
+      "path": "scripts/write-shading-example.ts",
+      "bytes": 647,
+      "sha256": "e1020313e9e8fc40d7eb680bf2bc9727c82e0e27a70ef1d57639a179774b25bf"
+    },
+    {
+      "path": "skills/nwn-vfx/SKILL.md",
+      "bytes": 36636,
+      "sha256": "1707b7130ea3d35dbf9f810b036277ae56ffcc2e72b1eb80794f5ed15a6fbc5f"
+    },
+    {
+      "path": "tests/assets-remove.test.ts",
+      "bytes": 9832,
+      "sha256": "ab979c2323cbb2b29c023d57b6e40004242609ec8fe42c4252280fbad0dfd9bd"
+    },
+    {
+      "path": "tests/assets-service.test.ts",
+      "bytes": 9052,
+      "sha256": "59466bd81e2476d23c1e1ca02618b04bb3cb5a854dafc834244f261246488554"
+    },
+    {
+      "path": "tests/assets-undo.test.ts",
+      "bytes": 6404,
+      "sha256": "9ce4b78ca6379b77025943bc4ef2030f2d9b38157d5fba3c1f23de53d915c086"
+    },
+    {
+      "path": "tests/audio-service.test.ts",
+      "bytes": 4196,
+      "sha256": "ec8c3f583c1364e0753be7aa39643202b1313f66168f051819155b8ecc6c7344"
+    },
+    {
+      "path": "tests/audio.test.ts",
+      "bytes": 5002,
+      "sha256": "925f265618ea71f1c054af03a3b7c249f6c33c58c536a9a9f98bf4bf3094b831"
+    },
+    {
+      "path": "tests/binary-geometry.test.ts",
+      "bytes": 4852,
+      "sha256": "a5a62807f2cd4c3b468ed8c964353ecf43de43af8f82cc933312725e591f09cc"
+    },
+    {
+      "path": "tests/browser-contracts.test.ts",
+      "bytes": 5229,
+      "sha256": "21eefcb71c8bde5cdee7f4eba6400307070cae09b59b5d7f79ac0035c4d46272"
+    },
+    {
+      "path": "tests/browser.acceptance.ts",
+      "bytes": 5634,
+      "sha256": "8aa00559b6340d1272ccc308146e513ac40eff4c3b757f177d04c5d943bc28b7"
+    },
+    {
+      "path": "tests/browser.audio.acceptance.ts",
+      "bytes": 16981,
+      "sha256": "5271aa8b55da3a9acdc01a3e9b6608ded8cd55204a030bb60128cc77037f2ea2"
+    },
+    {
+      "path": "tests/browser.camera.acceptance.ts",
+      "bytes": 9434,
+      "sha256": "1e9830724c9a43efa5acdcb56531ca9ed48e7205060593c979eedfdaa0eec628"
+    },
+    {
+      "path": "tests/browser.deformation.acceptance.ts",
+      "bytes": 10702,
+      "sha256": "b253ff6f70b6a042984ba73f4aece6308b2535010431240f3c361a73139dea28"
+    },
+    {
+      "path": "tests/browser.material.acceptance.ts",
+      "bytes": 9281,
+      "sha256": "5a2ff10ae4657c24dee51c0f199ab985929fe1499c1fbe489d6017d05c611453"
+    },
+    {
+      "path": "tests/browser.mesh.acceptance.ts",
+      "bytes": 9980,
+      "sha256": "dae2394b6c6f6fc7814615e7061a4b29c03f48148b18c9e9fe3e1d617a74b3f2"
+    },
+    {
+      "path": "tests/browser.obj-artifacts.acceptance.ts",
+      "bytes": 11935,
+      "sha256": "573622153a096a65e8444a58744e480f6002b15e09d71b1bc2fabe652403a556"
+    },
+    {
+      "path": "tests/browser.obj-material.acceptance.ts",
+      "bytes": 14267,
+      "sha256": "eff1e3ed73f8568583ca7c733a93276b086dcea6daf0c5d952a4944bc97668f7"
+    },
+    {
+      "path": "tests/browser.orientation.acceptance.ts",
+      "bytes": 22726,
+      "sha256": "c6af4cf6c8467c09f2a59564910fd2a05e282413da28e74fcf93479ecbd3ff78"
+    },
+    {
+      "path": "tests/browser.palette.acceptance.ts",
+      "bytes": 9537,
+      "sha256": "3343a624ed94056cec256b6c902f87b5c3f9512ffc7c5b2475139e7651622d36"
+    },
+    {
+      "path": "tests/browser.particles.acceptance.ts",
+      "bytes": 14066,
+      "sha256": "9442910a5d102af15e9dcc06ffdffe525ce9876db83201e001c8621b8c60779b"
+    },
+    {
+      "path": "tests/browser.project-playback.acceptance.ts",
+      "bytes": 7298,
+      "sha256": "a3c137509ef3aee9f0f97d1152f328f04c4dde31498d48bc509407e244b8f1b3"
+    },
+    {
+      "path": "tests/browser.shading.acceptance.ts",
+      "bytes": 11554,
+      "sha256": "96542221a70e568c8c003a3663db1ddc88725a4d6361cee3838e22366c5debbd"
+    },
+    {
+      "path": "tests/browser.textured-video.acceptance.ts",
+      "bytes": 9734,
+      "sha256": "ebc250407c03dd3b75320e5f30feb2df7e78a351310e22b62f630eab426f925f"
+    },
+    {
+      "path": "tests/browser.textures.acceptance.ts",
+      "bytes": 29990,
+      "sha256": "1a3afcdb0a04992eb512d47c77e3e9af42962848d9c5691d60361e37fe472c97"
+    },
+    {
+      "path": "tests/browser.trails.acceptance.ts",
+      "bytes": 16357,
+      "sha256": "9db89af2bc965463cca710a69b69a3905d67a30a21549a908eac332ab62ff806"
+    },
+    {
+      "path": "tests/browser.video.acceptance.ts",
+      "bytes": 9874,
+      "sha256": "a127504494f5077a1f8d71dcf79d334502be627a70c02908640c1b5a6307b152"
+    },
+    {
+      "path": "tests/browser.webmcp.acceptance.ts",
+      "bytes": 18136,
+      "sha256": "9ce063377509bc49efd7820216318bfdb6ac8346c18bc6586af1dc4690591ac2"
+    },
+    {
+      "path": "tests/camera.test.ts",
+      "bytes": 5639,
+      "sha256": "cc2fb996717c8224e6b4595fad5c2435d8fd0d46407f1b118fcc99c5674adb4f"
+    },
+    {
+      "path": "tests/cli.test.ts",
+      "bytes": 23471,
+      "sha256": "bd7b8fbac5f6e978357d5f916f3ba94cd81a4be702d471688b3c298107ae05d1"
+    },
+    {
+      "path": "tests/compiled-candidate.test.ts",
+      "bytes": 6653,
+      "sha256": "7f9134c404317687780f56e09707d077fbdaaa3eb8d42de98cec9f60ee0e64e6"
+    },
+    {
+      "path": "tests/compiled-readback.test.ts",
+      "bytes": 2838,
+      "sha256": "b1178f759eeee6abea54cb20f0b4169481a44aedf324a562341a0914eac6235f"
+    },
+    {
+      "path": "tests/contracts.test.ts",
+      "bytes": 5775,
+      "sha256": "080400c450fc09db24e18594eae1b5b6bae45e6735af149c860587b2339aa534"
+    },
+    {
+      "path": "tests/deformation.test.ts",
+      "bytes": 10311,
+      "sha256": "9d99a7d6e56822ea68da688e49451e0c19168f9e9f44147272dbdc779b752405"
+    },
+    {
+      "path": "tests/emitter-orientation-export.test.ts",
+      "bytes": 10075,
+      "sha256": "9d1477932449ee947a5e88e2495e91811c0c6a0b9bc6a7426378be9ec2d37ba0"
+    },
+    {
+      "path": "tests/emitter-orientation-service.test.ts",
+      "bytes": 9818,
+      "sha256": "ffb2004d44d351fe0c9fb0396253bb39ab4190dbb11c5a1b9ec7aa8415782f0c"
+    },
+    {
+      "path": "tests/emitter-orientation.test.ts",
+      "bytes": 6997,
+      "sha256": "2b2e1ac6cbbdece2553d0a302f8ac5ca6c83a38fde1b8cea82b9e218ce34bcb3"
+    },
+    {
+      "path": "tests/fixtures/audio.ts",
+      "bytes": 934,
+      "sha256": "af4b5924fd7d3919590ea96b38c02a6e6b940c1d24f81267c41b07b729c3b9bb"
+    },
+    {
+      "path": "tests/fixtures/independent-emitter-orientation.mdl",
+      "bytes": 1228,
+      "sha256": "bed188ea31a9d53f53cdf63f57ec64259d02b230608ae5519504b876c6641260"
+    },
+    {
+      "path": "tests/fixtures/independent-emitter.mdl",
+      "bytes": 1370,
+      "sha256": "ede77f406762543d9f3b4ab3d42a0e86f01f66fbf98cba134e93b2eac69a01ac"
+    },
+    {
+      "path": "tests/fixtures/independent-mesh.mdl",
+      "bytes": 1241,
+      "sha256": "ce8f540dfbf628795a071eb558fa2fd3c87c8266753c7fc9ef82abe760962ea3"
+    },
+    {
+      "path": "tests/fixtures/mesh-deformation.ts",
+      "bytes": 2181,
+      "sha256": "ad92881ac3033eca59ba9acac8600bbec8c67ed3684de4faf6ca8ca5e1027a9c"
+    },
+    {
+      "path": "tests/fixtures/mesh-impact.ts",
+      "bytes": 2441,
+      "sha256": "4f38849aa33f82867d14df7bcc452c23fac83f5b087c6f9431ccf121d7b70e63"
+    },
+    {
+      "path": "tests/fixtures/mesh-shading.ts",
+      "bytes": 2153,
+      "sha256": "b99d958c836452805c5d334fb4800fda360ec341aa3c1e186868120752a83475"
+    },
+    {
+      "path": "tests/fixtures/palette.ts",
+      "bytes": 1345,
+      "sha256": "b9b33bdbc06c416018317acf533013a0d8e0f238bb7e7e5516bde09486c8a8d7"
+    },
+    {
+      "path": "tests/fixtures/rgba-texture.ts",
+      "bytes": 2978,
+      "sha256": "9e6ba6d2b0492e5f85c3f8ae4562aa89f517eeccec7708ebd57c428e7fef3dbc"
+    },
+    {
+      "path": "tests/fixtures/smooth-deformation.ts",
+      "bytes": 1089,
+      "sha256": "7850dc7e442f2327981e4383228706e8c33ff9a5dd9fd959cbb8e3bf50f03ca3"
+    },
+    {
+      "path": "tests/fixtures/textured-video.ts",
+      "bytes": 3498,
+      "sha256": "d2f0693b3ba832e4d3de0893fd568c2b8307f8f89b3d107e7a9d4c0b3fac52d3"
+    },
+    {
+      "path": "tests/format.test.ts",
+      "bytes": 35965,
+      "sha256": "47dbcc5b99bf686eebde4e74132d74efcfe3ececeedd36fd80e3c5cefe20a437"
+    },
+    {
+      "path": "tests/history.test.ts",
+      "bytes": 3001,
+      "sha256": "fa10e956d0c355b0505756d082d374a7282e679954a5b7612f40f5f7016dea25"
+    },
+    {
+      "path": "tests/job-handoff-integrity.test.ts",
+      "bytes": 4282,
+      "sha256": "b9ecff28a07cf008bbb15beafd84a958f6247dd1c8e0bfee0515bf38cea7bd06"
+    },
+    {
+      "path": "tests/mesh-export-edge.test.ts",
+      "bytes": 677,
+      "sha256": "eaf287855671750a7d0eed10c7384581d487f8c35b8906a87e9fecaab5ac3e64"
+    },
+    {
+      "path": "tests/mesh-material-export.test.ts",
+      "bytes": 4827,
+      "sha256": "c03e6627e4e350ab9cd629fe79b36880a8981ae8817b25af268c10cb0dee4350"
+    },
+    {
+      "path": "tests/mesh-material-renderer.test.ts",
+      "bytes": 3500,
+      "sha256": "953cfdfa51d15affaf85f2c56a4ca5e9f9a8a5c94121c85462623ec6e401fd31"
+    },
+    {
+      "path": "tests/mesh-service.test.ts",
+      "bytes": 5697,
+      "sha256": "87aac65a7f44f750bd3620d57e92bb714b248a8ea7ebbf909163b1939172a287"
+    },
+    {
+      "path": "tests/mesh.test.ts",
+      "bytes": 4279,
+      "sha256": "7029c83fee1097aa780cc5ccb17535739ca07c95cb5ff7837f25abc780ffc00c"
+    },
+    {
+      "path": "tests/native-test-status.test.ts",
+      "bytes": 6783,
+      "sha256": "c91e8f49291186a84ba100c81ef84870989505a832fabc74c078c7f23ea3b5e5"
+    },
+    {
+      "path": "tests/normalization-export.test.ts",
+      "bytes": 11900,
+      "sha256": "143f010b28145dbe55c3dd086afb9b58a2a70337f67603f6bfad17fe43da02b8"
+    },
+    {
+      "path": "tests/normalization-service.test.ts",
+      "bytes": 4555,
+      "sha256": "23a64933463f4f0bbbebb5af21c41063dd6d9d01b137c7afc21256138098ab9d"
+    },
+    {
+      "path": "tests/obj-service.test.ts",
+      "bytes": 10950,
+      "sha256": "43923ce62b0e4289cc350cd4110d4158d7fed1665481483d4e5ef0437869edb7"
+    },
+    {
+      "path": "tests/obj.test.ts",
+      "bytes": 11229,
+      "sha256": "e1834f7d2142dc3e1321bddf5203a9e1cbe7efcd5bf0af4324469786155adb9f"
+    },
+    {
+      "path": "tests/palette-service.test.ts",
+      "bytes": 6812,
+      "sha256": "e9656a3da6a18fb7a401dd5f4b7dce2a246b696b3656210acd01fdbe0bb985f9"
+    },
+    {
+      "path": "tests/palette.test.ts",
+      "bytes": 5946,
+      "sha256": "ee40bf9327789fd88a0177a05408341b2a7c4bcf39c5240d5589516b80d8373c"
+    },
+    {
+      "path": "tests/portable-budget.test.ts",
+      "bytes": 9817,
+      "sha256": "b9d90a9e13b569d3111438b0fc5fd378901759921f68ba58c73df9cae7172878"
+    },
+    {
+      "path": "tests/render-errors.test.ts",
+      "bytes": 13943,
+      "sha256": "3a2e91ec81cabf7878a6f1fa9839e82073bc5c676bcde8b5d2296069c986701e"
+    },
+    {
+      "path": "tests/service.test.ts",
+      "bytes": 20092,
+      "sha256": "4a8428bff69e18cb84fd9e3585503bd6fd6cbf49554a81abeca7bb0ab8fa2c65"
+    },
+    {
+      "path": "tests/shading.test.ts",
+      "bytes": 10271,
+      "sha256": "c32b461fb3ef92890bdbe49af0a8bcf4ce1c57089a81e5b001407c27a6a70152"
+    },
+    {
+      "path": "tests/smooth-deformation.test.ts",
+      "bytes": 6532,
+      "sha256": "83aaa2e2c840c9fc3dcebc5a871e9f8158ee1b3e7188bff661bbdbdf4d7b7213"
+    },
+    {
+      "path": "tests/texture-normalization.test.ts",
+      "bytes": 14693,
+      "sha256": "e336d056735359f38132a8fe3f83c76df0e9cb29b3e626f27849796be725ed2c"
+    },
+    {
+      "path": "tests/textures.test.ts",
+      "bytes": 13261,
+      "sha256": "251b657d41057aaae09be1bc31ff3d56ef190dd854e9afa3b98b61c59fd53f8c"
+    },
+    {
+      "path": "tests/tga-native-origin.test.ts",
+      "bytes": 2254,
+      "sha256": "b3d7de9e6f6f164cb0f20e66538099759aa1cce74fecefcd7e39ddcbd876cbd0"
+    },
+    {
+      "path": "tests/trails.test.ts",
+      "bytes": 5258,
+      "sha256": "6d73a76cc8770532da0e8906ccd9435f9d2fc7afd201a72cfca7b544436cf5ea"
+    },
+    {
+      "path": "tests/video-errors.test.ts",
+      "bytes": 1573,
+      "sha256": "f01046da2650da24f1ef416c360e40e1d4f4cd46912dfb2d73ea06edb302fa8d"
+    },
+    {
+      "path": "tests/webmcp-adapter.test.ts",
+      "bytes": 20876,
+      "sha256": "3e050745f4768292d8620d3e78abe115c12925dcc263c2695156439e7bb347ae"
+    },
+    {
+      "path": "tests/webmcp-descriptor-budget.test.ts",
+      "bytes": 7244,
+      "sha256": "8b4aac55ca124a1109e45dcd93db86f28b30b7af184619dc8c7a0feac3b0113a"
+    },
+    {
+      "path": "tests/webmcp-session.test.ts",
+      "bytes": 22326,
+      "sha256": "86e438ebc48390dd5f1371f1ea120ae17baa02ec0610946ae1007da4cf88a9e0"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 384,
+      "sha256": "fd9f1659fad3b48fcba7ba8971b4b82c9b60be67a9037b93078e5eeed12bff20"
+    },
+    {
+      "path": "tsup.config.ts",
+      "bytes": 317,
+      "sha256": "30dbb62be509564a28bf502c86df7f447a13a1e92403434989164257035ace2a"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 313,
+      "sha256": "2cca22d0f660013d049f62ff2edfc89720cf7c4ab8e9262e2aa90af123e349b7"
+    }
+  ]
+}

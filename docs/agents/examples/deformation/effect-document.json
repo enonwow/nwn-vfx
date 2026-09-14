@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 7,
+  "name": "Generic mesh deformation example",
+  "duration": 2,
+  "seed": 1827,
+  "profileId": "nwn-ee-impact-ascii-experimental-v1",
+  "locks": [],
+  "layers": [
+    {
+      "id": "deforming_surface",
+      "name": "Deforming red surface",
+      "type": "mesh",
+      "enabled": true,
+      "color": "#ffffff",
+      "alpha": 0,
+      "start": 0.4,
+      "duration": 0.45,
+      "position": [
+        0,
+        0,
+        0.32
+      ],
+      "orientation": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "scale": 1,
+      "geometry": {
+        "kind": "custom",
+        "vertices": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            -0.025,
+            0,
+            0.005
+          ],
+          [
+            -0.025,
+            0,
+            0.018
+          ],
+          [
+            -0.008,
+            0,
+            0.03
+          ],
+          [
+            0.014,
+            0,
+            0.025
+          ],
+          [
+            0.028,
+            0,
+            0.016
+          ],
+          [
+            0.026,
+            0,
+            0.003
+          ]
+        ],
+        "faces": [
+          [
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            4,
+            3
+          ],
+          [
+            0,
+            5,
+            4
+          ],
+          [
+            0,
+            6,
+            5
+          ]
+        ],
+        "uv": [
+          [
+            1,
+            0.08
+          ],
+          [
+            1,
+            0.6
+          ],
+          [
+            0.66,
+            0.92
+          ],
+          [
+            0.33,
+            1
+          ],
+          [
+            0,
+            0.65
+          ],
+          [
+            0,
+            0.1
+          ],
+          [
+            0.5,
+            0
+          ]
+        ],
+        "uvFaces": [
+          [
+            6,
+            4,
+            5
+          ],
+          [
+            6,
+            3,
+            4
+          ],
+          [
+            6,
+            2,
+            3
+          ],
+          [
+            6,
+            1,
+            2
+          ],
+          [
+            6,
+            0,
+            1
+          ]
+        ]
+      },
+      "animation": {
+        "vertices": [
+          {
+            "time": 0,
+            "value": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                -0.025,
+                0,
+                0.005
+              ],
+              [
+                -0.025,
+                0,
+                0.018
+              ],
+              [
+                -0.008,
+                0,
+                0.03
+              ],
+              [
+                0.014,
+                0,
+                0.025
+              ],
+              [
+                0.028,
+                0,
+                0.016
+              ],
+              [
+                0.026,
+                0,
+                0.003
+              ]
+            ]
+          },
+          {
+            "time": 0.137,
+            "value": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                -0.16,
+                0.012,
+                -0.028
+              ],
+              [
+                -0.19,
+                -0.009,
+                0.034
+              ],
+              [
+                -0.057,
+                0.013,
+                0.079
+              ],
+              [
+                0.073,
+                -0.011,
+                0.061
+              ],
+              [
+                0.21,
+                0.018,
+                0.037
+              ],
+              [
+                0.17,
+                -0.004,
+                -0.033
+              ]
+            ]
+          },
+          {
+            "time": 0.45,
+            "value": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                -0.22,
+                0.025,
+                -0.061
+              ],
+              [
+                -0.27,
+                -0.017,
+                0.007
+              ],
+              [
+                -0.085,
+                0.03,
+                0.095
+              ],
+              [
+                0.1,
+                -0.028,
+                0.029
+              ],
+              [
+                0.31,
+                0.04,
+                0.02
+              ],
+              [
+                0.25,
+                -0.013,
+                -0.08
+              ]
+            ]
+          }
+        ],
+        "alpha": [
+          {
+            "time": 0,
+            "value": 0
+          },
+          {
+            "time": 0.025,
+            "value": 1
+          },
+          {
+            "time": 0.3,
+            "value": 0.9
+          },
+          {
+            "time": 0.45,
+            "value": 0
+          }
+        ]
+      },
+      "material": {
+        "diffuse": "#ffffff",
+        "selfIllumination": "#000000"
+      },
+      "blend": "normal",
+      "texture": "asset:019b5fa069128fe17aa78352287fd9e3f47d7a43466c0b0a1885954e6a86ff40"
+    }
+  ],
+  "assets": [
+    {
+      "id": "019b5fa069128fe17aa78352287fd9e3f47d7a43466c0b0a1885954e6a86ff40",
+      "name": "deformation-red.png",
+      "mime": "image/png",
+      "width": 64,
+      "height": 64,
+      "pngBase64": "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",
+      "source": {
+        "fileName": "deformation-red.png",
+        "sha256": "019b5fa069128fe17aa78352287fd9e3f47d7a43466c0b0a1885954e6a86ff40"
+      }
+    }
+  ]
+}

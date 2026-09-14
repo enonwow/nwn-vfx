@@ -1,0 +1,9 @@
+[
+  {
+    "type": "layer.set",
+    "layerId": "panels",
+    "values": {
+      "deformationInterpolation": null
+    }
+  }
+]

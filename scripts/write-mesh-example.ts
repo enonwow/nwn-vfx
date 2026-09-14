@@ -1,0 +1,11 @@
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {meshImpactChanges} from '../tests/fixtures/mesh-impact.js';
+import {applyChanges,makeDocument} from '../packages/core/src/model.js';
+import {assertDocument} from '../packages/contracts/src/schema.js';
+const root=fileURLToPath(new URL('../',import.meta.url)),changes=meshImpactChanges();
+assertDocument(applyChanges(makeDocument('empty'),changes,true));
+mkdirSync(resolve(root,'docs/agents/examples'),{recursive:true});
+writeFileSync(resolve(root,'docs/agents/examples/mesh-impact.changes.json'),JSON.stringify(changes,null,2)+'\n');
+process.stdout.write('Wrote a validated, generic mesh/animation operation example.\n');

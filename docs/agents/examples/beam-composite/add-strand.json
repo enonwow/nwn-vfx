@@ -1,0 +1,39 @@
+[
+  {
+    "type": "layer.add",
+    "layer": {
+      "id": "strand",
+      "name": "Statyczna nitka",
+      "type": "beam",
+      "enabled": true,
+      "color": "#9b152b",
+      "alpha": 0.2,
+      "width": 0.008,
+      "texture": "glow",
+      "blend": "additive",
+      "source": [
+        0,
+        0,
+        1.2
+      ],
+      "target": [
+        0,
+        3,
+        1.2
+      ],
+      "radius": 0,
+      "delay": 0.05,
+      "lightningScale": 0,
+      "segments": 4,
+      "seed": 42,
+      "flow": {
+        "direction": "source-to-target",
+        "speed": 0
+      },
+      "textureMapping": {
+        "axis": "v",
+        "fit": "source"
+      }
+    }
+  }
+]

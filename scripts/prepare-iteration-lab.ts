@@ -1,0 +1,32 @@
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {resolve,join} from 'node:path';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {createHash} from 'node:crypto';
+const root=resolve(process.argv[2]??'output/iteration-lab/2026-09-10/first-public');
+if(!root.startsWith(resolve('output/iteration-lab')+'\\'))throw Error('Lab must remain under the isolated iteration workspace');
+const cli=join(root,process.argv[2]?'runtime/bin/nwn-vfx.mjs':'runtime-2/bin/nwn-vfx.mjs'),owner=join(root,'data/config.json'),agentConfig=join(root,'tlc-agent.config.json');
+const exec=promisify(execFile),sha=(b:Uint8Array|string)=>createHash('sha256').update(b).digest('hex');
+const call=async(args:string[],config=owner)=>{try{const {stdout}=await exec(process.execPath,[cli,'--config',config,'--json',...args],{maxBuffer:32*1024*1024});const r=JSON.parse(stdout);if(r.status==='failed')throw Error(JSON.stringify(r.error));return r.data;}catch(e:any){throw Error(e.stdout?JSON.stringify(JSON.parse(e.stdout).error):e.message);}};
+await mkdir(join(root,'inputs'),{recursive:true});
+const sourcePaths={v10:'C:/Projects/nwn-vfx/output/beam-high-visibility-v10/binary/effect-document.json',v11:'C:/Projects/the last city/output/vfx-workflow/intake-v11/resources/effect-document.json'};
+const sources:any={};
+for(const [label,path] of Object.entries(sourcePaths)){
+  const bytes=await readFile(path),document=JSON.parse(bytes.toString());
+  if(document.authoring?.benchmark)throw Error('Source carries an external approval; explicit requalification needed.');
+  const p=await call(['projects','import','--file',path,'--project',`tlc-${label}-028-${process.argv[2]?'qualified':'source'}`,'--idempotency-key',`iteration-lab-028-import-${label}`]);
+  sources[label]={sourcePath:path,sourceFileSha256:sha(bytes),projectId:p.id,revision:p.revision};
+}
+const actor=await call(['actors','create','--name','TLC iteration 0.28 consumer','--projects',Object.values(sources).map((s:any)=>s.projectId).join(','),'--scopes','read,edit,create,build,render,export,jobs,artifacts,review,cancel','--idempotency-key','iteration-lab-028-consumer']);
+const config=JSON.parse(await readFile(owner,'utf8'));
+await writeFile(agentConfig,JSON.stringify({...config,ownerToken:actor.token},null,2),{mode:0o600});
+const inspect=await call(['projects','inspect','--project',sources.v10.projectId],agentConfig);
+const input={...{projectId:sources.v10.projectId,revision:sources.v10.revision},observed:{projectId:sources.v11.projectId,revision:sources.v11.revision},layerId:inspect.document.layers[0].id,groups:['texture','alpha','size'],binary:true,render:true,times:[1],conditions:{filtering:'export-mipmaps',background:'dark',camera:{position:[3.4,-5.4,2.75],target:[0,0,.7],fov:39}}};
+const inputPath=join(root,'inputs/iteration.json');await writeFile(inputPath,JSON.stringify(input,null,2));
+const plan=await call(['diagnostics','plan','--input-file',inputPath],agentConfig);await writeFile(join(root,'plan.json'),JSON.stringify(plan,null,2));
+const job=await call(['iteration','prepare','--input-file',inputPath,'--idempotency-key','iteration-lab-028-first-control-texture-alpha-size'],agentConfig);
+const repeat=await call(['iteration','prepare','--input-file',inputPath,'--idempotency-key','iteration-lab-028-first-control-texture-alpha-size'],agentConfig);if(repeat.id!==job.id)throw Error('Duplicate iteration');
+const version=await call(['version'],agentConfig);
+const manifest={version,cli,configPath:agentConfig,instanceId:config.instanceId,workspaceId:config.workspaceId,actorId:actor.id,sources,jobId:job.id,globalAnd14384Changed:false,nativeVerified:false};
+await writeFile(join(root,'handoff.json'),JSON.stringify(manifest,null,2));
+console.log(JSON.stringify(manifest,null,2));
